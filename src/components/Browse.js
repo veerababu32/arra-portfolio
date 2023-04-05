@@ -29,7 +29,7 @@ const Browse = () => {
                       type="button"
                       role="tab"
                       aria-controls={`#${tab.tabId}-tab-pane`}
-                      aria-selected={`${tab.ariaSelected}`}
+                      aria-selected={tab.ariaSelected}
                     >
                       {tab.tabName}
                     </button>
