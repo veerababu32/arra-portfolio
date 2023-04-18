@@ -1,202 +1,250 @@
-import { Col, Container, Row } from "react-bootstrap";
-import Navbar from "./Navbar";
-import Sidebar from "./Sidebar";
+import { Col, Container, Row, Table } from "react-bootstrap";
+import { AiOutlinePlus } from "react-icons/ai";
+import { toolsTabsData, toolsTableData } from "../constants/data";
+import Layout from "./Layout";
+import { Bar } from "react-chartjs-2";
+import "chart.js/auto";
+import { useState } from "react";
 
 const Tools = () => {
+  const [checkboxValues, setCheckboxValues] = useState({
+    checkbox1: true,
+    checkbox2: true,
+    checkbox3: true,
+    checkbox4: true,
+    checkbox5: true,
+    checkbox6: true,
+    checkbox7: true,
+    checkbox8: true,
+    checkbox9: true,
+    checkbox10: true,
+    checkbox11: true,
+    checkbox12: true,
+    checkbox13: true,
+    checkbox14: true,
+    checkbox15: true,
+    checkbox16: true,
+    checkbox17: true,
+    checkbox18: true,
+  });
+
+  const lineBarData = {
+    labels: ["", "", "", "", "", ""],
+    datasets: [
+      {
+        label: "",
+        data: [0, 100, 30, 60, 85, 0],
+        backgroundColor: "rgba(54, 162, 235, 0.2)",
+        borderColor: "rgba(54, 162, 235, 1)",
+        borderWidth: 1,
+      },
+      {
+        label: "",
+        data: [0, 100, 30, 60, 85, 85],
+        type: "line",
+        fill: false,
+        borderColor: "rgba(54, 162, 235, 1)",
+        borderWidth: 2,
+      },
+    ],
+  };
+
+  const lineBarOptions = {
+    scales: {
+      y: {
+        display: false,
+      },
+      x: {
+        display: false,
+      },
+    },
+    plugins: {
+      legend: {
+        display: false,
+      },
+    },
+  };
+
+  const handleCheckboxChange = (event) => {
+    const { name, checked } = event.target;
+    setCheckboxValues({ ...checkboxValues, [name]: checked });
+  };
+
   return (
     <>
-      <Container className="d-flex flex-row p-0 home" fluid>
-        <Sidebar />
-        <div className="w-100">
-          <Navbar />
-          <div>
-            {/* <ul class="nav nav-tabs" id="myToolsTab" role="tablist">
-            <li class="nav-item" role="presentation">
-              <button
-                class="nav-link active"
-                id="home-tab"
-                data-bs-toggle="tab"
-                data-bs-target="#home-tab-pane"
-                type="button"
-                role="tab"
-                aria-controls="home-tab-pane"
-                aria-selected="true"
-              >
-                Compare Platforms
-              </button>
-            </li>
-            <li class="nav-item" role="presentation">
-              <button
-                class="nav-link"
-                id="profile-tab"
-                data-bs-toggle="tab"
-                data-bs-target="#profile-tab-pane"
-                type="button"
-                role="tab"
-                aria-controls="profile-tab-pane"
-                aria-selected="false"
-              >
-                Compare Virtual Lands
-              </button>
-            </li>
-            <li class="nav-item" role="presentation">
-              <button
-                class="nav-link"
-                id="contact-tab"
-                data-bs-toggle="tab"
-                data-bs-target="#contact-tab-pane"
-                type="button"
-                role="tab"
-                aria-controls="contact-tab-pane"
-                aria-selected="false"
-              >
-                Compare Crowd Funded Assets
-              </button>
-            </li>
+      <Layout>
+        <div>
+          <ul className="nav nav-tabs" id="myToolsTab" role="tablist">
+            {toolsTabsData.map((tab, index) => {
+              return (
+                <li className="nav-item" role="presentation" key={tab.tabName}>
+                  <button
+                    className={`nav-link ${index === 0 ? "active" : ""}`}
+                    id={`${tab.tabId}-tab`}
+                    data-bs-toggle="tab"
+                    data-bs-target={`#${tab.tabId}-tab-pane`}
+                    type="button"
+                    role="tab"
+                    aria-controls={`#${tab.tabId}-tab-pane`}
+                    aria-selected={index === 0 ? true : false}
+                  >
+                    {tab.tabName}
+                  </button>
+                </li>
+              );
+            })}
           </ul>
-          <div class="tab-content" id="myTabContent">
-            <div
-              class="tab-pane fade show active"
-              id="home-tab-pane"
-              role="tabpanel"
-              aria-labelledby="home-tab"
-              tabindex="0"
-            >
-              ...
-            </div>
-            <div
-              class="tab-pane fade"
-              id="profile-tab-pane"
-              role="tabpanel"
-              aria-labelledby="profile-tab"
-              tabindex="0"
-            >
-              ...
-            </div>
-            <div
-              class="tab-pane fade"
-              id="contact-tab-pane"
-              role="tabpanel"
-              aria-labelledby="contact-tab"
-              tabindex="0"
-            >
-              ...
-            </div>
-          </div> */}
-            <Container className="p-4 home-container">
-              <form>
-                <Row>
-                  <Col xs={12}>
-                    <input
-                      type={"search"}
-                      className="form-control leaderboards-input"
-                      placeholder="🔍 Search Any"
-                    />
-                  </Col>
-                </Row>
-              </form>
-              <div className="tools-filter">
-                <Row className="mb-3">
-                  <Col>
-                    <label className="form-label">PRICE PER SQM</label>
-                    <select className="form-select">
-                      <option>$0 - $10,000</option>
-                    </select>
-                  </Col>
-                  <Col>
-                    <label className="form-label">IRR COMPARISONS</label>
-                    <select className="form-select">
-                      <option>$0 - $10,000</option>
-                    </select>
-                  </Col>
-                  <Col>
-                    <label className="form-label">RETURN CALCULATOR</label>
-                    <select className="form-select">
-                      <option>Select Currency</option>
-                    </select>
-                  </Col>
-                  <Col>
-                    <label className="form-label">TRENDING CITIES</label>
-                    <select className="form-select">
-                      <option>Select City</option>
-                    </select>
-                  </Col>
-                  <Col>
-                    <label className="form-label">
-                      ASSETS CLASS COMPARISONS
-                    </label>
-                    <select className="form-select">
-                      <option>Select Asset Class</option>
-                    </select>
-                  </Col>
-                </Row>
-                <div>
-                  <h6>CRITERIA</h6>
-                  <div className="d-flex justify-content-between">
-                    <button className="me-2">
-                      <input
-                        type="checkbox"
-                        id="switch"
-                        className="tools-criteria"
-                        checked
-                      />
-                      <label htmlFor="switch">Toggle</label> Blockchain
-                    </button>
-                    <button className="me-2">
-                      <input
-                        type="checkbox"
-                        id="switchOne"
-                        className="tools-criteria"
-                        checked
-                      />
-                      <label htmlFor="switchOne">Toggle</label> NFTS
-                    </button>
-                    <button className="me-2">
-                      <input
-                        type="checkbox"
-                        id="switchTwo"
-                        className="tools-criteria"
-                        checked
-                      />
-                      <label htmlFor="switchTwo">Toggle</label> Security
-                    </button>
-                    <button className="me-2">
-                      <input
-                        type="checkbox"
-                        id="switchThree"
-                        className="tools-criteria"
-                        checked
-                      />
-                      <label htmlFor="switchThree">Toggle</label> IRR Between X
-                      & Y
-                    </button>
-                    <button className="me-2">
-                      <input
-                        type="checkbox"
-                        id="switchFour"
-                        className="tools-criteria"
-                        checked
-                      />
-                      <label htmlFor="switchFour">Toggle</label> Locked Period
-                      Between X & Y
-                    </button>
-                    <button>
-                      <input
-                        type="checkbox"
-                        id="switchFive"
-                        className="tools-criteria"
-                        checked
-                      />
-                      <label htmlFor="switchFive">Toggle</label> Annual Yield
-                      Between X & Y
-                    </button>
-                  </div>
+          {toolsTabsData.map((items, index) => {
+            return (
+              <div className="tab-content" id="myTabContent" key={index}>
+                <div
+                  className={`tab-pane fade ${
+                    index === 0 ? "show active" : ""
+                  }`}
+                  id={`${items.tabId}-tab-pane`}
+                  role="tabpanel"
+                  aria-labelledby={`${items.tabId}-tab`}
+                  tabIndex={index}
+                >
+                  {items.toolsTabData.map((tabData) => {
+                    return (
+                      <Container
+                        className="p-4 browse-container"
+                        key={tabData.searchName}
+                      >
+                        <form>
+                          <Row className="mb-3 align-items-center">
+                            <Col xs={8}>
+                              <input
+                                type="search"
+                                className="form-control leaderboards-input"
+                                placeholder={`🔍 ${tabData.searchName}`}
+                              />
+                            </Col>
+                            <Col>
+                              <button className="tools-platform-btn">
+                                <AiOutlinePlus />
+                                {tabData.firstBtnName}
+                              </button>
+                            </Col>
+                            <Col>
+                              <button className="tools-platform-btn">
+                                <AiOutlinePlus />
+                                {tabData.secondBtnName}
+                              </button>
+                            </Col>
+                          </Row>
+                        </form>
+                        <div className="tools-filter">
+                          <Row className="mb-3">
+                            {tabData.filterData.map((filtData) => {
+                              return (
+                                <Col key={filtData.labelName}>
+                                  <label className="form-label">
+                                    {filtData.labelName}
+                                  </label>
+                                  <select className="form-select">
+                                    <option>{filtData.option}</option>
+                                  </select>
+                                </Col>
+                              );
+                            })}
+                          </Row>
+                          <div>
+                            <h6>{tabData.boxDataName}</h6>
+                            <div className="d-flex justify-content-between">
+                              {tabData.creteriaData.map((item, index) => {
+                                return (
+                                  <button className="me-2" key={item.labelName}>
+                                    <input
+                                      type="checkbox"
+                                      id={item.id}
+                                      name={item.name}
+                                      className="tools-criteria"
+                                      checked={checkboxValues[item.name]}
+                                      onChange={handleCheckboxChange}
+                                    />
+                                    <label htmlFor={item.id}>Toggle</label>
+                                    {item.labelName}
+                                    {index}
+                                  </button>
+                                );
+                              })}
+                            </div>
+                          </div>
+                        </div>
+                        <div>
+                          {toolsTableData.map((items) => {
+                            return (
+                              <Table
+                                className="m-0 tools-table"
+                                key={items.colsData}
+                              >
+                                <thead>
+                                  <tr>
+                                    <th>Platform</th>
+                                    <th>Annual Return</th>
+                                    <th>Return 3Y</th>
+                                    <th>Classification</th>
+                                    <th>Growth of 1000</th>
+                                    <th>Minimum Increment</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  {items.colsData.map((item) => {
+                                    return (
+                                      <tr key={item.dataId}>
+                                        <td style={{ width: "180px" }}>
+                                          <div className="d-flex">
+                                            <div className="card-table-data-icon me-2">
+                                              arra
+                                            </div>
+                                            <div>
+                                              <h6 className="m-0 card-table-data-names">
+                                                {item.name}
+                                              </h6>
+                                              <p
+                                                className="m-0 card-table-data-names"
+                                                style={{ color: "#8ff129" }}
+                                              >
+                                                {item.subName}
+                                              </p>
+                                            </div>
+                                          </div>
+                                        </td>
+                                        <td>{item.annualReturn}</td>
+                                        <td>{item.return3Y}</td>
+                                        <td>{item.classification}</td>
+                                        <td style={{ width: "200px" }}>
+                                          <div className="line-bar-chart">
+                                            <Bar
+                                              data={lineBarData}
+                                              options={lineBarOptions}
+                                              style={{
+                                                width: "160px",
+                                                height: "150px",
+                                              }}
+                                            />
+                                          </div>
+                                        </td>
+                                        <td>{item.minInvestment}</td>
+                                      </tr>
+                                    );
+                                  })}
+                                </tbody>
+                              </Table>
+                            );
+                          })}
+                        </div>
+                      </Container>
+                    );
+                  })}
                 </div>
               </div>
-            </Container>
-          </div>
+            );
+          })}
         </div>
-      </Container>
+      </Layout>
     </>
   );
 };

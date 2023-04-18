@@ -1,6 +1,9 @@
 import InviteImg from "../assets/images/invite-img.png";
 import Daniel from "../assets/images/daniel-img.png";
 import Cody from "../assets/images/cody-img.png";
+import Bitcoin from "../assets/images/Group-284-image.png";
+import Republic from "../assets/images/Group-285-image.png";
+import ETF from "../assets/images/Group-286-image.png";
 import StockMarketArrow from "../assets/images/stock-market-arrow.png";
 import CarouselImg from "../assets/images/carousel-img.png";
 import mainRoadImg from "../assets/images/main-road.png";
@@ -12,6 +15,48 @@ import mallStoreFrontOne from "../assets/images/mall-storefront-one.png";
 import mallPlazaOne from "../assets/images/mall-plaza-one.png";
 import largeMallEstateOne from "../assets/images/large-mall-state-one.png";
 
+const sideBarData = [
+  {
+    home: [
+      { id: "s1", name: "All Assets" },
+      { id: "s2", name: "Top Stories" },
+      { id: "s3", name: "Guides & Tutorials" },
+      { id: "s4", name: "Help" },
+    ],
+    dashboard: [
+      { id: "s5", name: "Portfolio" },
+      { id: "s6", name: "Performance" },
+      { id: "s7", name: "Import Assets" },
+      { id: "s8", name: "For You" },
+      { id: "s9", name: "Learn & Earn" },
+      { id: "s10", name: "Notifications" },
+      { id: "s11", name: "Invite Friends" },
+    ],
+    leaderboard: [
+      { id: "s12", name: "Virtual Land" },
+      { id: "s13", name: "Real Estate NFTS" },
+      { id: "s14", name: "Crowdfunding" },
+      { id: "s15", name: "Phyrtual-Hybrid" },
+    ],
+    community: [
+      { id: "s16", name: "News Feed" },
+      { id: "s17", name: "Trending" },
+      { id: "s18", name: "My Groups" },
+      { id: "s19", name: "My Pages" },
+      { id: "s20", name: "My Chat" },
+      { id: "s21", name: "Support" },
+    ],
+    tools: [
+      { id: "s22", name: "Compare" },
+      { id: "s23", name: "Portfolio Builder" },
+    ],
+    browse: [
+      { id: "s24", name: "Listings" },
+      { id: "s25", name: "My Store" },
+    ],
+  },
+];
+
 const navbarTabs = [
   { tabId: 31, name: "Home", link: "" },
   { tabId: 32, name: "Dashboard", link: "dashboard" },
@@ -21,10 +66,264 @@ const navbarTabs = [
   { tabId: 36, name: "Browse", link: "browse" },
 ];
 
+const homeCardsData = [
+  {
+    card: "one",
+    title: "Physical Assets",
+    bgColor: "#c7bcdd",
+    name: "Crowsfunded & Tokenization Assets",
+    subName: "Recent Transactions",
+    tableTitleOne: "Name",
+    tableTitleTwo: "Price",
+    tableTitleThree: "Chanee",
+    tableData: [
+      {
+        tableId: "1a",
+        tableBodyTitle: "SmartCrowd",
+        tableBodySubTitle: "SMRTCRWD",
+        tableBodyPrice: "2.56",
+        tableBodyChanee: "+13.65",
+      },
+      {
+        tableId: "1b",
+        tableBodyTitle: "GetStake",
+        tableBodySubTitle: "GSTKD",
+        tableBodyPrice: "19.43",
+        tableBodyChanee: "+11.19",
+      },
+      {
+        tableId: "1c",
+        tableBodyTitle: "Aqarchain",
+        tableBodySubTitle: "AQAR",
+        tableBodyPrice: "8.93",
+        tableBodyChanee: "-6.955",
+      },
+    ],
+  },
+  {
+    card: "two",
+    title: "Virtual Digital Assets",
+    bgColor: "#ffefbd",
+    name: "Metaverse, Web3 & Gaming Platforms",
+    subName: "Recent Transactions",
+    tableTitleOne: "Name",
+    tableTitleTwo: "Price",
+    tableTitleThree: "Chanee",
+    tableData: [
+      {
+        tableId: "1d",
+        tableBodyTitle: "SmartCrowd",
+        tableBodySubTitle: "SMRTCRWD",
+        tableBodyPrice: "2.56",
+        tableBodyChanee: "+13.65",
+      },
+      {
+        tableId: "1e",
+        tableBodyTitle: "GetStake",
+        tableBodySubTitle: "GSTKD",
+        tableBodyPrice: "19.43",
+        tableBodyChanee: "+11.19",
+      },
+      {
+        tableId: "1f",
+        tableBodyTitle: "Aqarchain",
+        tableBodySubTitle: "AQAR",
+        tableBodyPrice: "8.93",
+        tableBodyChanee: "-6.955",
+      },
+    ],
+  },
+  {
+    card: "three",
+    title: "Phyrtual-Hybrid Assets",
+    name: "Physical to Digital Link",
+    subName: "Recent Transactions",
+    tableTitleOne: "Name",
+    tableTitleTwo: "Price",
+    tableTitleThree: "Chanee",
+    tableData: [
+      {
+        tableId: "1g",
+        tableBodyTitle: "SmartCrowd",
+        tableBodySubTitle: "SMRTCRWD",
+        tableBodyPrice: "2.56",
+        tableBodyChanee: "+13.65",
+      },
+      {
+        tableId: "1h",
+        tableBodyTitle: "GetStake",
+        tableBodySubTitle: "GSTKD",
+        tableBodyPrice: "19.43",
+        tableBodyChanee: "+11.19",
+      },
+      {
+        tableId: "1i",
+        tableBodyTitle: "Aqarchain",
+        tableBodySubTitle: "AQAR",
+        tableBodyPrice: "8.93",
+        tableBodyChanee: "-6.955",
+      },
+    ],
+  },
+];
+
+const homeTopStoriesData = [
+  {
+    name: "Top Stories",
+    cardData: [
+      {
+        cardId: "1j",
+        subTitle: "News",
+        date: "May14",
+        title: "Major Increase In Bitcoin Trading Volume",
+        img: Bitcoin,
+        alt: "bitcoin",
+        desc: "A significant amount of bitcoin changed hands on the United States’ most dominant spot exchange, Coinbase, as investors look to buy the dip.",
+      },
+      {
+        cardId: "1k",
+        subTitle: "News",
+        date: "May11",
+        title:
+          "‘Unlike Republicans, we recognize that there is real risk’ to stablecoins and crypto, says Senate Banking Committee chairmans",
+        img: Republic,
+        alt: "republic",
+        desc: "",
+      },
+      {
+        cardId: "1l",
+        subTitle: "News",
+        date: "May4",
+        title: "What is an ETF?",
+        img: ETF,
+        alt: "etf",
+        desc: "Exchange-traded funds — better known as an ETFs — are similar in many ways to mutual funds.",
+      },
+    ],
+  },
+];
+
+const dashboardYourAssets = [
+  {
+    name: "Your Assets",
+    data: [
+      {
+        num: "one",
+        title: "1.25 BTC",
+        subTitle: "$2,4506",
+        description: "Physical Real Estate",
+        subDes: "+0.34%",
+      },
+      {
+        num: "two",
+        title: "0.32 LTC",
+        subTitle: "$2,4506",
+        description: "Metaverse Lands",
+        subDes: "+0.34%",
+      },
+      {
+        num: "three",
+        title: "1.25 ETH",
+        subTitle: "$2,4506",
+        description: "Digital Assets",
+        subDes: "+0.34%",
+      },
+      {
+        num: "four",
+        title: "6.73 BTC",
+        subTitle: "$5,121.17",
+        description: "Other Assets",
+        subDes: "+0.34%",
+      },
+    ],
+  },
+];
+
+const dashboardPerformanceTable = [
+  {
+    name: "Performance",
+    firstSelector: "24h",
+    secondSelector: "Top Gainer",
+    tableTitleOne: "Name",
+    tableTitleTwo: "Price",
+    tableTitleThree: "Chanee",
+    tableTitleFour: "Market Cap",
+    tableTitleFive: "Watch",
+    tableData: [
+      {
+        id: "one",
+        icon: "SmartCrowd",
+        iconName: "SmartCrowd",
+        iconSubTitle: "SMARTCRWD",
+        price: "$2.56",
+        chanee: "+13.56%",
+        marketCap: "$400.8M",
+      },
+      {
+        id: "two",
+        icon: "GetStake",
+        iconName: "GetStake",
+        iconSubTitle: "GSTKD",
+        price: "$10.43",
+        chanee: "+11.19%",
+        marketCap: "$400.8M",
+      },
+      {
+        id: "three",
+        icon: "Aqarchain",
+        iconName: "Aqarchain",
+        iconSubTitle: "AQAR",
+        price: "$8.93",
+        chanee: "-6.94%",
+        marketCap: "$400.8M",
+      },
+      {
+        id: "four",
+        icon: "BsMeta",
+        iconName: "Meta",
+        iconSubTitle: "META",
+        price: "$2.56",
+        chanee: "-2.45%",
+        marketCap: "$400.8M",
+      },
+      {
+        id: "five",
+        icon: "VelChain",
+        iconName: "VelChain",
+        iconSubTitle: "VET",
+        price: "$112.14",
+        chanee: "+6.80%",
+        marketCap: "$400.8M",
+      },
+      {
+        id: "six",
+        icon: "AAVE",
+        iconName: "AaVe",
+        iconSubTitle: "AAVE",
+        price: "$32.18",
+        chanee: "+3.76%",
+        marketCap: "$400.8M",
+      },
+    ],
+  },
+];
+
+const dashboardInviteData = [
+  {
+    title: "Get $10 in free real estate",
+    subTitle: "Give a friend the gift of free real estate",
+    description:
+      "Invite a friend to araa & you'll both receive in free real estate assets when they buy or sell their first $100 on",
+    img: InviteImg,
+    subDes: "Only certain users can accept your invitation",
+    terms: "View Terms & Conditions",
+  },
+];
+
 const leaderboardsTableData = [
   {
     title: "Virtual Land & Real Estate/NFTS (BsMetaverse/Web3/Gaming)",
-    bgColor: "#8ff129",
+    bgColor: "#ffefbd",
     color: "black",
     data: [
       {
@@ -96,7 +395,7 @@ const leaderboardsTableData = [
   },
   {
     title: "Crowdfunding Market",
-    bgColor: "#8ff129",
+    bgColor: "#c7bcdd",
     color: "black",
     data: [
       {
@@ -155,7 +454,7 @@ const leaderboardsTableData = [
   },
   {
     title: "Phyrtual-Hybrid Market",
-    bgColor: "#8ff129",
+    bgColor: "#c3fcce",
     color: "black",
     data: [
       {
@@ -211,106 +510,6 @@ const leaderboardsTableData = [
         owners: "7.1k",
       },
     ],
-  },
-];
-
-const dashboardYourAssets = [
-  {
-    num: "one",
-    title: "1.25 BTC",
-    subTitle: "$2,4506",
-    description: "Physical Real Estate",
-    subDes: "+0.34%",
-  },
-  {
-    num: "two",
-    title: "0.32 LTC",
-    subTitle: "$2,4506",
-    description: "Metaverse Lands",
-    subDes: "+0.34%",
-  },
-  {
-    num: "three",
-    title: "1.25 ETH",
-    subTitle: "$2,4506",
-    description: "Digital Assets",
-    subDes: "+0.34%",
-  },
-  {
-    num: "four",
-    title: "6.73 BTC",
-    subTitle: "$5,121.17",
-    description: "Other Assets",
-    subDes: "+0.34%",
-  },
-];
-
-const dashboardPerformanceTable = [
-  {
-    id: "one",
-    icon: "SmartCrowd",
-    iconName: "SmartCrowd",
-    iconSubTitle: "SMARTCRWD",
-    price: "$2.56",
-    chanee: "+13.56%",
-    marketCap: "$400.8M",
-  },
-  {
-    id: "two",
-    icon: "GetStake",
-    iconName: "GetStake",
-    iconSubTitle: "GSTKD",
-    price: "$10.43",
-    chanee: "+11.19%",
-    marketCap: "$400.8M",
-  },
-  {
-    id: "three",
-    icon: "Aqarchain",
-    iconName: "Aqarchain",
-    iconSubTitle: "AQAR",
-    price: "$8.93",
-    chanee: "-6.94%",
-    marketCap: "$400.8M",
-  },
-  {
-    id: "four",
-    icon: "BsMeta",
-    iconName: "Meta",
-    iconSubTitle: "META",
-    price: "$2.56",
-    chanee: "-2.45%",
-    marketCap: "$400.8M",
-  },
-  {
-    id: "five",
-    icon: "VelChain",
-    iconName: "VelChain",
-    iconSubTitle: "VET",
-    price: "$112.14",
-    chanee: "+6.80%",
-    marketCap: "$400.8M",
-  },
-  {
-    id: "six",
-    icon: "AAVE",
-    iconName: "AaVe",
-    iconSubTitle: "AAVE",
-    price: "$32.18",
-    chanee: "+3.76%",
-    marketCap: "$400.8M",
-  },
-];
-
-const dashboardInviteData = [
-  {
-    title: "Get $10 in free real estate",
-    subTitle: "Give a friend the gift of free real estate",
-    description:
-      "Invite a friend to araa & you'll both receive in free real estate assets when they buy or sell their first $100 on",
-    img: InviteImg,
-    subDes: "Only certain users can accept your invitation",
-    terms: "View Terms & Conditions",
   },
 ];
 
@@ -414,13 +613,278 @@ const communityTrendingData = [
   },
 ];
 
+const toolsTabsData = [
+  {
+    tabName: "Compare Platforms",
+    tabId: "comparePlatforms",
+    toolsTabData: [
+      {
+        searchName: "Search Any",
+        firstBtnName: "Add Platforms",
+        secondBtnName: "Add Matrics",
+        filterData: [
+          {
+            labelName: "PRICE PER SQM",
+            option: "$0 - $10,000",
+          },
+          {
+            labelName: "IRR COMPARISONS",
+            option: "$0 - $10,000",
+          },
+          {
+            labelName: "RETURN CALCULATOR",
+            option: "Select Currency",
+          },
+          {
+            labelName: "TRENDING CITIES",
+            option: "Select City",
+          },
+          {
+            labelName: "ASSETS CLASS COMPARISONS",
+            option: "Select Asset Class",
+          },
+        ],
+        boxDataName: "CRITERIA",
+        creteriaData: [
+          {
+            id: "switchOne",
+            check: true,
+            name: "checkbox1",
+            labelName: "Blockchain",
+          },
+          {
+            id: "switchTwo",
+            check: true,
+            name: "checkbox2",
+            labelName: "NFTS",
+          },
+          {
+            id: "switchThree",
+            check: true,
+            name: "checkbox3",
+            labelName: "Security",
+          },
+          {
+            id: "switchFour",
+            check: true,
+            name: "checkbox4",
+            labelName: "IRR",
+          },
+          {
+            id: "switchFive",
+            check: true,
+            name: "checkbox5",
+            labelName: "Locked Period Between X & Y",
+          },
+          {
+            id: "switchSix",
+            check: true,
+            name: "checkbox6",
+            labelName: "Annual Yield Between X & Y",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    tabName: "Compare Virtual Lands",
+    tabId: "compareVirtualLands",
+    toolsTabData: [
+      {
+        searchName: "Search Any",
+        firstBtnName: "Add Platforms",
+        secondBtnName: "Add Matrics",
+        filterData: [
+          {
+            labelName: "PRICE PER SQM",
+            option: "$0 - $10,000",
+          },
+          {
+            labelName: "IRR COMPARISONS",
+            option: "$0 - $10,000",
+          },
+          {
+            labelName: "RETURN CALCULATOR",
+            option: "Select Currency",
+          },
+          {
+            labelName: "TRENDING CITIES",
+            option: "Select City",
+          },
+          {
+            labelName: "ASSETS CLASS COMPARISONS",
+            option: "Select Asset Class",
+          },
+        ],
+        boxDataName: "CRITERIA",
+        creteriaData: [
+          {
+            id: "switchSeven",
+            name: "checkbox7",
+            labelName: "Blockchain",
+          },
+          {
+            id: "switchEight",
+            name: "checkbox8",
+            labelName: "NFTS",
+          },
+          {
+            id: "switchNine",
+            name: "checkbox9",
+            labelName: "Security",
+          },
+          {
+            id: "switchTen",
+            name: "checkbox10",
+            labelName: "IRR",
+          },
+          {
+            id: "switchEleven",
+            name: "checkbox11",
+            labelName: "Locked Period Between X & Y",
+          },
+          {
+            id: "switchTwleve",
+            name: "checkbox12",
+            labelName: "Annual Yield Between X & Y",
+          },
+        ],
+      },
+    ],
+  },
+  {
+    tabName: "Compare Crowd Funded Assets",
+    tabId: "compareCrowdFundedAssets",
+    toolsTabData: [
+      {
+        searchName: "Search Any",
+        firstBtnName: "Add Platforms",
+        secondBtnName: "Add Matrics",
+        filterData: [
+          {
+            labelName: "PRICE PER SQM",
+            option: "$0 - $10,000",
+          },
+          {
+            labelName: "IRR COMPARISONS",
+            option: "$0 - $10,000",
+          },
+          {
+            labelName: "RETURN CALCULATOR",
+            option: "Select Currency",
+          },
+          {
+            labelName: "TRENDING CITIES",
+            option: "Select City",
+          },
+          {
+            labelName: "ASSETS CLASS COMPARISONS",
+            option: "Select Asset Class",
+          },
+        ],
+        boxDataName: "CRITERIA",
+        creteriaData: [
+          {
+            id: "switchThirteen",
+            name: "checkbox13",
+            labelName: "Blockchain",
+          },
+          {
+            id: "switchFourteen",
+            name: "checkbox14",
+            labelName: "NFTS",
+          },
+          {
+            id: "switchFifteen",
+            name: "checkbox15",
+            labelName: "Security",
+          },
+          {
+            id: "switchSixteen",
+            name: "checkbox16",
+            labelName: "IRR",
+          },
+          {
+            id: "switchSeventeen",
+            name: "checkbox17",
+            labelName: "Locked Period Between X & Y",
+          },
+          {
+            id: "switchEighteen",
+            name: "checkbox18",
+            labelName: "Annual Yield Between X & Y",
+          },
+        ],
+      },
+    ],
+  },
+];
+
+const toolsTableData = [
+  {
+    colsData: [
+      {
+        dataId: "pt1",
+        name: "Araa",
+        subName: "+2.54%",
+        annualReturn: "7.54%",
+        return3Y: "2.28%",
+        classification: "Developed Markets",
+        minInvestment: "CAD $1,570.90",
+      },
+      {
+        dataId: "pt2",
+        name: "Araa",
+        subName: "+2.54%",
+        annualReturn: "7.54%",
+        return3Y: "2.28%",
+        classification: "Developed Markets",
+        minInvestment: "CAD $1,570.90",
+      },
+      {
+        dataId: "pt3",
+        name: "Araa",
+        subName: "+2.54%",
+        annualReturn: "7.54%",
+        return3Y: "2.28%",
+        classification: "Developed Markets",
+        minInvestment: "CAD $1,570.90",
+      },
+      {
+        dataId: "pt4",
+        name: "Araa",
+        subName: "+2.54%",
+        annualReturn: "7.54%",
+        return3Y: "2.28%",
+        classification: "Developed Markets",
+        minInvestment: "CAD $1,570.90",
+      },
+      {
+        dataId: "pt5",
+        name: "Araa",
+        subName: "+2.54%",
+        annualReturn: "7.54%",
+        return3Y: "2.28%",
+        classification: "Developed Markets",
+        minInvestment: "CAD $1,570.90",
+      },
+      {
+        dataId: "pt6",
+        name: "Araa",
+        subName: "+2.54%",
+        annualReturn: "7.54%",
+        return3Y: "2.28%",
+        classification: "Developed Markets",
+        minInvestment: "CAD $1,570.90",
+      },
+    ],
+  },
+];
+
 const browseData = [
   {
     tabName: "Virtual Land",
     tabId: "virtualLand",
-    activeTab: " active",
-    ariaSelected: true,
-    showClass: " show",
     browseCardData: [
       {
         cardId: "card1",
@@ -491,9 +955,6 @@ const browseData = [
   {
     tabName: "Crowdfunding",
     tabId: "crowdFunding",
-    activeTab: "",
-    ariaSelected: false,
-    showClass: "",
     browseCardData: [
       {
         cardId: "card9",
@@ -564,9 +1025,6 @@ const browseData = [
   {
     tabName: "NFTS",
     tabId: "nfts",
-    activeTab: "",
-    ariaSelected: false,
-    showClass: "",
     browseCardData: [
       {
         cardId: "card17",
@@ -637,9 +1095,6 @@ const browseData = [
   {
     tabName: "Tokenization",
     tabId: "tokeniZation",
-    activeTab: "",
-    ariaSelected: false,
-    showClass: "",
     browseCardData: [
       {
         cardId: "card25",
@@ -710,9 +1165,6 @@ const browseData = [
   {
     tabName: "Hybrid Link",
     tabId: "hybridLink",
-    activeTab: "",
-    ariaSelected: false,
-    showClass: "",
     browseCardData: [
       {
         cardId: "card33",
@@ -783,9 +1235,6 @@ const browseData = [
   {
     tabName: "My Store",
     tabId: "myStore",
-    activeTab: "",
-    ariaSelected: false,
-    showClass: "",
     browseCardData: [
       {
         cardId: "card41",
@@ -856,7 +1305,10 @@ const browseData = [
 ];
 
 export {
+  sideBarData,
   navbarTabs,
+  homeCardsData,
+  homeTopStoriesData,
   leaderboardsTableData,
   dashboardYourAssets,
   dashboardPerformanceTable,
@@ -865,5 +1317,7 @@ export {
   communityDanielInfo,
   communityTrendingData,
   communityDanielAccordian,
+  toolsTabsData,
+  toolsTableData,
   browseData,
 };

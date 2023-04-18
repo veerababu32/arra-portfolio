@@ -14,8 +14,7 @@ import {
   communityDanielAccordian,
 } from "../constants/data";
 import { BsHeart, BsChat, BsSend, BsBookmark } from "react-icons/bs";
-import Navbar from "./Navbar";
-import Sidebar from "./Sidebar";
+import Layout from "./Layout";
 
 const Community = () => {
   const [index, setIndex] = useState(0);
@@ -171,36 +170,32 @@ const Community = () => {
 
   return (
     <>
-      <Container className="d-flex flex-row p-0 home" fluid>
-        <Sidebar />
-        <div className="w-100">
-          <Navbar />
-          <div className="community">
-            <div className="community-stories">{stories}</div>
-          </div>
-          <Container className="px-4 py-2 community-container">
-            <Row>
-              <Col xs={9}>
-                <div className="mb-4">
-                  <div className="d-flex">
-                    <input
-                      type={"search"}
-                      className="form-control community-input"
-                      placeholder="What's going on Daniel?"
-                    />
-                    <button className="community-btn">Share</button>
-                  </div>
-                </div>
-                {danielAccordian}
-              </Col>
-              <Col xs={3}>
-                {danielInfoCard}
-                {trendingData}
-              </Col>
-            </Row>
-          </Container>
+      <Layout>
+        <div className="community">
+          <div className="community-stories">{stories}</div>
         </div>
-      </Container>
+        <Container className="p-4 community-container">
+          <Row>
+            <Col xs={9}>
+              <div className="mb-4">
+                <div className="d-flex">
+                  <input
+                    type={"search"}
+                    className="form-control community-input"
+                    placeholder="What's going on Daniel?"
+                  />
+                  <button className="community-btn">Share</button>
+                </div>
+              </div>
+              {danielAccordian}
+            </Col>
+            <Col xs={3}>
+              {danielInfoCard}
+              {trendingData}
+            </Col>
+          </Row>
+        </Container>
+      </Layout>
     </>
   );
 };

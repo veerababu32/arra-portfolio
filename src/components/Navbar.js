@@ -6,6 +6,16 @@ import { NavLink, Link } from "react-router-dom";
 import { navbarTabs } from "../constants/data";
 
 const Navbar = () => {
+  // const activeTabHandler = (id) => {
+  //   if (id === 32) {
+  //     console.log(true);
+  //     const data = sideBarData.map((tab) => {
+  //       return tab.dashboard;
+  //     });
+  //     setSideBarTabsData(data);
+  //   }
+  // };
+
   return (
     <>
       <div className="navbar navbar-expand navbar-light">
@@ -17,6 +27,7 @@ const Navbar = () => {
                   to={`/${item.link}`}
                   className="nav-link"
                   key={item.tabId}
+                  // onClick={() => activeTabHandler(item.tabId)}
                 >
                   <span className="py-1 px-3 navbar-badges-left">
                     {item.name}
