@@ -98,7 +98,9 @@ const Home = () => {
                               <p className="m-0">{item.desc}</p>
                             </div>
                             <div>
-                              <BsThreeDotsVertical />
+                              <a href="#info">
+                                <BsThreeDotsVertical className="text-black"/>
+                              </a>
                             </div>
                           </div>
                         </Card.Body>

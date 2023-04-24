@@ -6,6 +6,9 @@ import Community from "./components/Community";
 import Tools from "./components/Tools";
 import Browse from "./components/Browse";
 import ErrorPage from "./ErrorPage.js";
+import SidebarContext from "./store/SidebarContext";
+import { sideBarData } from "./constants/data";
+import { useState } from "react";
 
 const router = createBrowserRouter([
   {
@@ -40,8 +43,33 @@ const router = createBrowserRouter([
   },
 ]);
 
-function App() {
-  return <RouterProvider router={router} />;
-}
+const App = () => {
+  const [sidebarTabs, setSidebarTabs] = useState([
+    { id: "s1", name: "All Assets" },
+    { id: "s2", name: "Top Stories" },
+    { id: "s3", name: "Guides & Tutorials" },
+    { id: "s4", name: "Help" },
+  ]);
+
+  const changeSidebarTabs = (tabName) => {
+    sideBarData.map((item) => {
+      if (tabName.toLowerCase() === item.name) {
+        setSidebarTabs(item.tabsData);
+      }
+      return item;
+    });
+  };
+
+  const sidebarContextData = {
+    tabs: sidebarTabs,
+    addTabs: changeSidebarTabs,
+  };
+
+  return (
+    <SidebarContext.Provider value={sidebarContextData}>
+      <RouterProvider router={router} />
+    </SidebarContext.Provider>
+  );
+};
 
 export default App;

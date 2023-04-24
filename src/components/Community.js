@@ -26,7 +26,9 @@ const Community = () => {
   let stories = communityStoriesData.map((item) => {
     return (
       <div key={item.id}>
-        <img src={item.img} alt={item.name} />
+        <div>
+          <img src={item.img} alt={item.name} className="w-100 h-100" />
+        </div>
         <p className="m-0">{item.name}</p>
       </div>
     );

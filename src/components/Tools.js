@@ -182,7 +182,14 @@ const Tools = () => {
                               >
                                 <thead>
                                   <tr>
-                                    <th>Platform</th>
+                                    <th colSpan={6}>
+                                      COMPARISON ANAYLYSIS WITH KEY METRICS
+                                    </th>
+                                  </tr>
+                                  <tr>
+                                    <th>
+                                      <div>Platform</div>
+                                    </th>
                                     <th>Annual Return</th>
                                     <th>Return 3Y</th>
                                     <th>Classification</th>

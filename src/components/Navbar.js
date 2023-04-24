@@ -4,17 +4,15 @@ import { IoMdNotificationsOutline } from "react-icons/io";
 import { AiOutlineUser } from "react-icons/ai";
 import { NavLink, Link } from "react-router-dom";
 import { navbarTabs } from "../constants/data";
+import { useContext } from "react";
+import SidebarContext from "../store/SidebarContext";
 
 const Navbar = () => {
-  // const activeTabHandler = (id) => {
-  //   if (id === 32) {
-  //     console.log(true);
-  //     const data = sideBarData.map((tab) => {
-  //       return tab.dashboard;
-  //     });
-  //     setSideBarTabsData(data);
-  //   }
-  // };
+  const sidebarCtx = useContext(SidebarContext);
+
+  const tabHandler = (tabId) => {
+    sidebarCtx.addTabs(tabId);
+  };
 
   return (
     <>
@@ -27,7 +25,7 @@ const Navbar = () => {
                   to={`/${item.link}`}
                   className="nav-link"
                   key={item.tabId}
-                  // onClick={() => activeTabHandler(item.tabId)}
+                  onClick={() => tabHandler(item.name)}
                 >
                   <span className="py-1 px-3 navbar-badges-left">
                     {item.name}

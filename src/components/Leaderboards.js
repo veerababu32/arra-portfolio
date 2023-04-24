@@ -7,7 +7,7 @@ const Leaderboards = () => {
   return (
     <>
       <Layout>
-        <Container className="p-4 container">
+        <Container className="p-4 home-container">
           <h5 className="mb-3">Leaderboards</h5>
           <form>
             <Row className="mb-3">

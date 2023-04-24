@@ -17,13 +17,17 @@ import largeMallEstateOne from "../assets/images/large-mall-state-one.png";
 
 const sideBarData = [
   {
-    home: [
+    name: "home",
+    tabsData: [
       { id: "s1", name: "All Assets" },
       { id: "s2", name: "Top Stories" },
       { id: "s3", name: "Guides & Tutorials" },
       { id: "s4", name: "Help" },
     ],
-    dashboard: [
+  },
+  {
+    name: "dashboard",
+    tabsData: [
       { id: "s5", name: "Portfolio" },
       { id: "s6", name: "Performance" },
       { id: "s7", name: "Import Assets" },
@@ -32,13 +36,19 @@ const sideBarData = [
       { id: "s10", name: "Notifications" },
       { id: "s11", name: "Invite Friends" },
     ],
-    leaderboard: [
+  },
+  {
+    name: "leaderboards",
+    tabsData: [
       { id: "s12", name: "Virtual Land" },
       { id: "s13", name: "Real Estate NFTS" },
       { id: "s14", name: "Crowdfunding" },
       { id: "s15", name: "Phyrtual-Hybrid" },
     ],
-    community: [
+  },
+  {
+    name: "community",
+    tabsData: [
       { id: "s16", name: "News Feed" },
       { id: "s17", name: "Trending" },
       { id: "s18", name: "My Groups" },
@@ -46,11 +56,17 @@ const sideBarData = [
       { id: "s20", name: "My Chat" },
       { id: "s21", name: "Support" },
     ],
-    tools: [
+  },
+  {
+    name: "tools",
+    tabsData: [
       { id: "s22", name: "Compare" },
       { id: "s23", name: "Portfolio Builder" },
     ],
-    browse: [
+  },
+  {
+    name: "browse",
+    tabsData: [
       { id: "s24", name: "Listings" },
       { id: "s25", name: "My Store" },
     ],
