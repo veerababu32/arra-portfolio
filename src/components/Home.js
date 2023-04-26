@@ -12,14 +12,13 @@ const Home = () => {
             {homeCardsData.map((item) => {
               return (
                 <Col xs={4} key={item.name}>
-                  <div>
+                  <div className="app__home-cards">
                     <h4>{item.title}</h4>
                     <div className={`app__home-card ${item.card}`}>
                       <div className="card-top">
-                        <h5 className={`${item.card}`}>{item.name}</h5>
+                        <h5 className={`${item.card} `}>{item.name}</h5>
                         <h6>{item.subName}</h6>
                       </div>
-                      <div className="card-middle"></div>
                       <div className="card-bottom">
                         <Table hover borderless>
                           <thead>

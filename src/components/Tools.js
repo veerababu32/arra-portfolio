@@ -106,7 +106,7 @@ const Tools = () => {
               aria-labelledby={`${items.tabId}-tab`}
               tabIndex={index}
             >
-              <div className="app__browse-container app__tools-section">
+              <div className="app__tools-container">
                 {items.toolsTabData.map((tabData) => {
                   return (
                     <Container key={tabData.searchName}>

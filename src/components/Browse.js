@@ -7,7 +7,11 @@ import Layout from "./Layout";
 const Browse = () => {
   return (
     <Layout>
-      <ul className="nav nav-tabs" id="myBrowseTab" role="tablist">
+      <ul
+        className="nav nav-tabs app__browse-tab"
+        id="myBrowseTab"
+        role="tablist"
+      >
         {browseData.map((tab, index) => {
           return (
             <li className="nav-item" role="presentation" key={tab.tabName}>
@@ -37,34 +41,34 @@ const Browse = () => {
               aria-labelledby={`${items.tabId}-tab`}
               tabIndex={index}
             >
-              <div className="browse-container">
-                <Container className="p-4">
+              <div className="app__browse-container">
+                <Container>
                   <form>
-                    <Row className="mb-3 align-items-center">
+                    <Row>
                       <Col xs={8}>
                         <input
                           type={"search"}
-                          className="form-control leaderboards-input m-0"
+                          className="form-control app__leaderboards-input"
                           placeholder="🔍 Search Any"
                         />
                       </Col>
                       <Col>
-                        <select className="form-select w-auto">
+                        <select className="form-select">
                           <option>RECENTLY CLOSED</option>
                         </select>
                       </Col>
-                      <Col className="d-flex align-items-center">
+                      <Col>
                         <input
                           type="checkbox"
                           id="onSale"
-                          className="tools-criteria"
+                          className="app__tools-filter-criteria-input"
                         />
                         <label htmlFor="onSale">Toggle</label> ON SALE
                       </Col>
                     </Row>
                   </form>
-                  <div className="tools-filter mb-4">
-                    <Row className="mb-3">
+                  <div className="app__browse-filter">
+                    <Row>
                       <Col>
                         <label className="form-label">COLLECTION</label>
                         <select className="form-select">
@@ -117,36 +121,28 @@ const Browse = () => {
                       </Col>
                     </Row>
                   </div>
-                  <div className="browse-cards">
+                  <div className="app__browse-cards">
                     {items.browseCardData.map((item) => {
                       return (
                         <Card key={item.cardId}>
-                          <Card.Header className="p-0">
-                            <Card.Img
-                              src={item.img}
-                              alt={item.name}
-                              className="w-100 h-100"
-                            />
+                          <Card.Header>
+                            <Card.Img src={item.img} alt={item.name} />
                           </Card.Header>
                           <Card.Body>
-                            <div className="d-flex justify-content-between align-items-center">
+                            <div className="app__browse-cards-top-content">
                               <div>
-                                <h6 className="m-0">{item.name}</h6>
+                                <h6>{item.name}</h6>
                               </div>
-                              <div className="d-flex">
-                                <div className="browse-cards-icon">
-                                  <img
-                                    src={hexagonIcon}
-                                    className="w-100 h-100"
-                                    alt="hexagon-icon"
-                                  />
+                              <div className="app__browse-cards-icon">
+                                <div>
+                                  <img src={hexagonIcon} alt="hexagon-icon" />
                                 </div>
-                                <p className="m-0">{item.count}</p>
+                                <p>{item.count}</p>
                               </div>
                             </div>
-                            <div>
-                              <p className="m-0 mb-2">{item.subName}</p>
-                              <button className="browse-cards-button">
+                            <div className="app__browse-cards-bottom-content">
+                              <p>{item.subName}</p>
+                              <button className="app__browse-cards-btn">
                                 <MdLocationOn />
                                 {item.subCount}
                               </button>

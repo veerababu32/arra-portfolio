@@ -40,6 +40,8 @@ code {
     width: calc(100% - 230px);
   }
 
+  // Navbar
+
   &__navbar {
     border-bottom: 1px solid #0000001a;
     padding: 10px 0;
@@ -161,6 +163,8 @@ code {
     padding: 0.5rem 1rem;
   }
 
+  // Sidebar
+
   &__sidebar {
     width: 230px;
     padding: 10px;
@@ -234,6 +238,8 @@ code {
     }
   }
 
+  // Home
+
   &__home-container {
     height: calc(100vh - 72px);
     overflow-y: scroll;
@@ -247,9 +253,18 @@ code {
     }
   }
 
+  &__home-cards {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+  }
+
   &__home-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    height: 100%;
     border-radius: 20px;
-    // width: 320px;
 
     &.one {
       background-color: #c7bcdd;
@@ -261,26 +276,26 @@ code {
 
     &.three {
       background-color: #c3fcce;
-
-      & .card-top h5.three {
-        width: 160px;
-      }
     }
 
     & .card-top {
       @include padding(20px, 20px, 5px, 20px);
       @extend %home-card-radius;
-    }
-
-    & .card-middle {
-      height: 2px;
-      background-color: white;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: inherit;
     }
 
     & .card-bottom {
       @include padding(5px, 20px, 20px, 20px);
       @extend %home-card-radius;
+      border-top: 2px solid white;
     }
+  }
+
+  .flexible {
+    flex-grow: 1;
   }
 
   table {
@@ -869,6 +884,21 @@ code {
     }
   }
 
+  &__tools-container,
+  &__browse-container {
+    height: calc(100vh - 137px);
+    overflow-y: scroll;
+
+    & .container {
+      @include padding(24px, 24px, 24px, 24px);
+
+      & form .row {
+        @include margin(0, 0, 16px, 0);
+        align-items: center;
+      }
+    }
+  }
+
   &__tools-tab {
     @include padding(20px, 20px, 0, 20px);
 
@@ -892,17 +922,6 @@ code {
     }
   }
 
-  &__tools-section {
-    & .container {
-      @include padding(24px, 24px, 24px, 24px);
-
-      & form .row {
-        @include margin(0, 0, 16px, 0);
-        align-items: center;
-      }
-    }
-  }
-
   &__tools-platform-btn {
     @include direction-justitfy-align-properities(row, center, center);
     @include padding(4px, 15px, 4px, 15px);
@@ -918,7 +937,8 @@ code {
     }
   }
 
-  &__tools-filter {
+  &__tools-filter,
+  &__browse-filter {
     @include padding(20px, 20px, 20px, 20px);
     background-color: #d3d3d345;
     border-radius: 10px;
@@ -1064,7 +1084,104 @@ code {
   }
 
   &__browse-container {
-    height: calc(100vh - 137px);
-    overflow-y: scroll;
+    & form .row .col {
+      color: #a4a4a4;
+      border: none;
+
+      & select {
+        width: auto;
+        color: #a4a4a4;
+        border: none;
+      }
+    }
+
+    & form .row .col:last-child {
+      @include display-align-properities(center);
+    }
+
+    & .row .col-7 h6 {
+      font-size: 14px;
+      font-weight: normal;
+      color: #a4a4a4;
+      margin: 4px 0 12px 0;
+    }
+  }
+
+  &__browse-tab {
+    @extend .app__tools-tab;
+
+    & .nav-item {
+      width: calc(100% / 6);
+    }
+  }
+
+  &__browse-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+
+    & .card {
+      border-radius: 20px;
+
+      & .card-header {
+        padding: 0;
+
+        & .card-img {
+          width: 100%;
+          height: 100%;
+        }
+      }
+
+      & .card-body {
+        padding: 8px 12px 10px 12px;
+      }
+    }
+  }
+
+  &__browse-cards-top-content {
+    @include direction-justitfy-align-properities(row, space-between, center);
+    margin-bottom: 4px;
+
+    & div h6 {
+      margin: 0;
+    }
+  }
+
+  &__browse-cards-bottom-content {
+    & p {
+      margin: 0 0 8px 0;
+    }
+  }
+  &__browse-cards-icon {
+    display: flex;
+
+    & div {
+      height: 15px;
+      margin-right: 4px;
+
+      & img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    & p {
+      margin: 0;
+    }
+  }
+
+  &__browse-cards-btn {
+    @include display-align-properities(center);
+    border: none;
+    border-radius: 5px;
+    color: #a4a4a4;
+    font-size: 12px;
+    padding: 4px 6px;
+
+    & svg {
+      vertical-align: baseline;
+      font-size: 12px;
+      margin-right: 4px;
+    }
   }
 }
