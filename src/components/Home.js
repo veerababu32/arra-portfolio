@@ -5,23 +5,23 @@ import Layout from "./Layout";
 
 const Home = () => {
   return (
-    <>
-      <Layout>
-        <Container className="p-4 home-container">
-          <Row className="mb-4">
+    <Layout>
+      <div className="app__home-container">
+        <Container>
+          <Row>
             {homeCardsData.map((item) => {
               return (
                 <Col xs={4} key={item.name}>
                   <div>
                     <h4>{item.title}</h4>
-                    <div className={`home-card ${item.card}`}>
+                    <div className={`app__home-card ${item.card}`}>
                       <div className="card-top">
                         <h5 className={`${item.card}`}>{item.name}</h5>
                         <h6>{item.subName}</h6>
                       </div>
                       <div className="card-middle"></div>
                       <div className="card-bottom">
-                        <Table hover borderless className="m-0">
+                        <Table hover borderless>
                           <thead>
                             <tr>
                               <th>{item.tableTitleOne}</th>
@@ -34,17 +34,13 @@ const Home = () => {
                               return (
                                 <tr key={data.tableId}>
                                   <td>
-                                    <div className="card-table-data">
-                                      <div className="card-table-data-icon me-2">
+                                    <div className="app__home-card-table-data">
+                                      <div className="app__home-card-table-data-icon">
                                         <BsMeta />
                                       </div>
                                       <div>
-                                        <h6 className="m-0 card-table-data-names">
-                                          {data.tableBodyTitle}
-                                        </h6>
-                                        <p className="m-0 card-table-data-names text-white">
-                                          {data.tableBodySubTitle}
-                                        </p>
+                                        <h6>{data.tableBodyTitle}</h6>
+                                        <p>{data.tableBodySubTitle}</p>
                                       </div>
                                     </div>
                                   </td>
@@ -74,32 +70,32 @@ const Home = () => {
           </Row>
           {homeTopStoriesData.map((items) => {
             return (
-              <Row key={items.name}>
+              <Row className="app__home-stories-section" key={items.name}>
                 <h5>{items.name}</h5>
                 {items.cardData.map((item) => {
                   return (
-                    <Col xs={12} className="mb-4" key={item.cardId}>
-                      <Card className="flex-row home-stories-card">
-                        <Card.Header className="p-0 home-stories-card-img border-0">
-                          <Card.Img
-                            src={item.img}
-                            alt={item.alt}
-                            className="w-100 h-100"
-                          />
+                    <Col
+                      xs={12}
+                      className="app__home-stories"
+                      key={item.cardId}
+                    >
+                      <Card className="app__home-stories-card">
+                        <Card.Header className="app__home-stories-card-img">
+                          <Card.Img src={item.img} alt={item.alt} />
                         </Card.Header>
-                        <Card.Body className="home-stories-card-body">
-                          <div className="d-flex">
-                            <h6 className="m-0 me-4">{item.subTitle}</h6>
-                            <p className="m-0">{item.date}</p>
+                        <Card.Body className="app__home-stories-card-body">
+                          <div className="app__home-stories-card-body-sub-title">
+                            <h6>{item.subTitle}</h6>
+                            <p>{item.date}</p>
                           </div>
-                          <div className="d-flex justify-content-between">
+                          <div className="app__home-stories-card-body-title">
                             <div>
-                              <h5 className="m-0">{item.title}</h5>
-                              <p className="m-0">{item.desc}</p>
+                              <h5>{item.title}</h5>
+                              <p>{item.desc}</p>
                             </div>
                             <div>
                               <a href="#info">
-                                <BsThreeDotsVertical className="text-black"/>
+                                <BsThreeDotsVertical />
                               </a>
                             </div>
                           </div>
@@ -112,8 +108,8 @@ const Home = () => {
             );
           })}
         </Container>
-      </Layout>
-    </>
+      </div>
+    </Layout>
   );
 };
 export default Home;

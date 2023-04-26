@@ -5,21 +5,21 @@ import Layout from "./Layout";
 
 const Leaderboards = () => {
   return (
-    <>
-      <Layout>
-        <Container className="p-4 home-container">
-          <h5 className="mb-3">Leaderboards</h5>
+    <Layout>
+      <div className="app__home-container app__leaderboards-section">
+        <Container>
+          <h5>Leaderboards</h5>
           <form>
-            <Row className="mb-3">
+            <Row>
               <Col xs={10}>
                 <input
                   type={"search"}
-                  className="form-control leaderboards-input"
+                  className="form-control app__leaderboards-input"
                   placeholder="🔍 Search Any"
                 />
               </Col>
               <Col xs={2}>
-                <select className="form-select leaderboards-input">
+                <select className="form-select app__leaderboards-input">
                   <option>Filter</option>
                   <option value="1">One</option>
                   <option value="2">Two</option>
@@ -34,7 +34,7 @@ const Leaderboards = () => {
                 <div className="mb-4" key={items.title}>
                   <h5 className="mb-3">{items.title}</h5>
                   {
-                    <Table hover className="m-0 leaderboards-table">
+                    <Table hover className="m-0 app__leaderboards-table">
                       <thead>
                         <tr
                           style={{
@@ -76,18 +76,13 @@ const Leaderboards = () => {
                                 {item.id}
                               </td>
                               <td>
-                                <div className="card-table-data">
-                                  <div className="card-table-data-icon me-2">
+                                <div className="app__home-card-table-data">
+                                  <div className="app__home-card-table-data-icon">
                                     <BsMeta />
                                   </div>
                                   <div>
-                                    <h6 className="m-0 card-table-data-names">
-                                      {item.iconName}
-                                    </h6>
-                                    <p
-                                      className="m-0 card-table-data-names"
-                                      style={{ color: "#8ff129" }}
-                                    >
+                                    <h6>{item.iconName}</h6>
+                                    <p style={{ color: "#8ff129" }}>
                                       {item.iconSubTitle}
                                     </p>
                                   </div>
@@ -111,8 +106,8 @@ const Leaderboards = () => {
             })}
           </div>
         </Container>
-      </Layout>
-    </>
+      </div>
+    </Layout>
   );
 };
 

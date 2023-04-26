@@ -608,24 +608,32 @@ const communityTrendingData = [
   {
     title: "Trending News",
     btn: "View All",
-    img: StockMarketArrow,
-    titleOne: "Crypto Big Losses...",
-    titleTwo: "Bitcoin Make S&P No. 1",
-    titleThree: "#Crypto",
-    descOne: "Read More",
-    descTwo: "Read More",
-    descThree: "Ethereum",
+    data: [
+      {
+        title: "Crypto Big Losses...",
+        description: "Read More",
+        img: StockMarketArrow,
+      },
+      {
+        title: "Bitcoin Make S&P No. 1",
+        description: "Read More",
+        img: StockMarketArrow,
+      },
+      { title: "#Crypto", description: "Ethereum", img: StockMarketArrow },
+    ],
   },
   {
     title: "Trending Groups",
     btn: "View All",
-    img: StockMarketArrow,
-    titleOne: "#AraaRealEstate",
-    titleTwo: "#Games",
-    titleThree: "#Crypto",
-    descOne: "1040 Posts",
-    descTwo: "547 Posts",
-    descThree: "Ethereum",
+    data: [
+      {
+        title: "#AraaRealEstate",
+        description: "1040 Posts",
+        img: StockMarketArrow,
+      },
+      { title: "#Games", description: "547 Posts", img: StockMarketArrow },
+      { title: "#Crypto", description: "Ethereum", img: StockMarketArrow },
+    ],
   },
 ];
 

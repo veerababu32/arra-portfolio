@@ -1,0 +1,70 @@
+@mixin flex-column-properties($justify-content, $align-items) {
+  display: flex;
+  flex-direction: column;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}
+
+@mixin flex-row-properities($justify-content, $align-items) {
+  display: flex;
+  flex-direction: row;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}
+
+@mixin direction-justitfy-align-properities(
+  $direction,
+  $justify-content,
+  $align-items
+) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify-content;
+  align-items: $align-items;
+}
+
+@mixin padding($top, $right, $bottom, $left) {
+  padding: $top $right $bottom $left;
+}
+
+@mixin margin($top, $right, $bottom, $left) {
+  margin: $top $right $bottom $left;
+}
+
+@mixin display-align-properities($align-items) {
+  display: flex;
+  align-items: $align-items;
+}
+
+@mixin display-justify-properities($justify-content) {
+  display: flex;
+  justify-content: $justify-content;
+}
+
+@mixin display-direction-properties($direction) {
+  display: flex;
+  flex-direction: $direction;
+}
+
+@mixin display-direction-align-properties($direction, $align-items) {
+  display: flex;
+  flex-direction: $direction;
+  align-items: $align-items;
+}
+
+@mixin display-direction-justify-properties($direction, $justify-content) {
+  display: flex;
+  flex-direction: $direction;
+  justify-content: $justify-content;
+}
+
+@mixin background-img($img-name, $extension) {
+  background-image: url(#{$img-path}#{$img-name}#{$extension});
+}
+
+@mixin position-properties($top, $right, $bottom, $left) {
+  top: $top;
+  right: $right;
+  bottom: $bottom;
+  left: $left;
+}

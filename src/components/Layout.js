@@ -4,9 +4,9 @@ import { Container } from "react-bootstrap";
 
 const Layout = ({ children }) => {
   return (
-    <Container className="d-flex flex-row p-0 layout" fluid>
+    <Container className="app" fluid>
       <Sidebar />
-      <div className="w-100">
+      <div className="app__layout">
         <Navbar />
         {children}
       </div>

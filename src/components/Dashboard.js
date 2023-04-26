@@ -8,28 +8,27 @@ import {
 } from "../constants/data";
 import Layout from "./Layout";
 import MyChart from "./MyChart";
+import { Link } from "react-router-dom";
 
 const Dashboard = () => {
   return (
-    <>
-      <Layout>
-        <Container className="p-4 home-container">
+    <Layout>
+      <div className="app__home-container">
+        <Container>
           <form>
             <Row>
               <Col xs={7}>
                 <h5>Portifolio</h5>
-                <div className="border">
-                  <div className="d-flex justify-content-between align-items-center m-2">
-                    <div className="ms-3">
+                <div className="app__dashboard-portifolio">
+                  <div className="app__dashboard-portifolio-content">
+                    <div className="app__dashboard-portifolio-content-left">
                       <h4>$ 17,643.41</h4>
-                      <p className="m-0" style={{ fontSize: "12px" }}>
-                        Portifolio Balance
-                      </p>
+                      <p>Portifolio Balance</p>
                     </div>
-                    <div>
-                      <a href="#info">
-                        <BsThreeDotsVertical className="text-black" />
-                      </a>
+                    <div className="app__dashboard-portifolio-content-right">
+                      <Link to={"#"}>
+                        <BsThreeDotsVertical />
+                      </Link>
                     </div>
                   </div>
                   <MyChart />
@@ -39,28 +38,28 @@ const Dashboard = () => {
                 return (
                   <Col xs={5} key={items.name}>
                     <h5>{items.name}</h5>
-                    <div className="d-flex justify-content-between flex-wrap">
+                    <div className="app__dashboard-assets">
                       {items.data.map(function (item) {
                         return (
                           <Card
-                            className={`dashboard-card card--${item.num} mb-4`}
+                            className={`app__dashboard-assets-card card--${item.num}`}
                             key={item.num}
                           >
-                            <Card.Body className="d-flex flex-column justify-content-between">
-                              <div className="d-flex justify-content-between">
+                            <Card.Body className="app__dashboard-assets-card-body">
+                              <div className="top-section">
                                 <div>
-                                  <h6 className="m-0 me-4">{item.title}</h6>
-                                  <p className="m-0">{item.subTitle}</p>
+                                  <h6>{item.title}</h6>
+                                  <p>{item.subTitle}</p>
                                 </div>
                                 <div>
-                                  <a href="#info">
-                                    <BsThreeDotsVertical className="text-black" />
-                                  </a>
+                                  <Link to={"#"}>
+                                    <BsThreeDotsVertical />
+                                  </Link>
                                 </div>
                               </div>
-                              <div className="d-flex justify-content-between">
-                                <p className="m-0">{item.description}</p>
-                                <p className="m-0 text-white">{item.subDes}</p>
+                              <div className="bottom-section">
+                                <p>{item.description}</p>
+                                <p>{item.subDes}</p>
                               </div>
                             </Card.Body>
                           </Card>
@@ -71,21 +70,21 @@ const Dashboard = () => {
                 );
               })}
             </Row>
-            <Row className="mb-2">
+            <Row>
               {dashboardPerformanceTable.map((items) => {
                 return (
                   <Col
                     xs={7}
-                    className="dashboard-performance"
+                    className="app__dashboard-assets-performance"
                     key={items.name}
                   >
-                    <div className="d-flex justify-content-between align-items-center">
-                      <h5 className="m-0">{items.name}</h5>
-                      <div className="d-flex">
-                        <select className="form-select me-3 rounded-5">
+                    <div className="align-items-center app__dashboard-assets-performance-header">
+                      <h5>{items.name}</h5>
+                      <div>
+                        <select className="form-select">
                           <option>{items.firstSelector}</option>
                         </select>
-                        <select className="form-select w-auto rounded-5">
+                        <select className="form-select">
                           <option>{items.secondSelector}</option>
                         </select>
                       </div>
@@ -107,18 +106,13 @@ const Dashboard = () => {
                           return (
                             <tr key={item.id}>
                               <td>
-                                <div className="card-table-data">
-                                  <div className="card-table-data-icon me-2">
+                                <div className="app__home-card-table-data">
+                                  <div className="app__home-card-table-data-icon">
                                     <BsMeta />
                                   </div>
                                   <div>
-                                    <h6 className="m-0 card-table-data-names">
-                                      {item.iconName}
-                                    </h6>
-                                    <p
-                                      className="m-0 card-table-data-names"
-                                      style={{ color: "#8ff129" }}
-                                    >
+                                    <h6>{item.iconName}</h6>
+                                    <p style={{ color: "#8ff129" }}>
                                       {item.iconSubTitle}
                                     </p>
                                   </div>
@@ -148,27 +142,28 @@ const Dashboard = () => {
               })}
               {dashboardInviteData.map((item) => {
                 return (
-                  <Col className="dashboard-invite" key={item.title}>
+                  <Col
+                    className="app__dashboard-assets-invite"
+                    key={item.title}
+                  >
                     <h5>{item.title}</h5>
                     <h6>{item.subTitle}</h6>
                     <p>{item.description}</p>
-                    <div className="d-flex mb-3">
+                    <div className="app__dashboard-assets-invite-email">
                       <input
                         type="email"
                         placeholder="Enter email address"
-                        className="form-control me-2"
+                        className="form-control"
                         required
                       />
-                      <button className="dashboard-invite--button">
-                        Enter
-                      </button>
+                      <button type="submit">Enter</button>
                     </div>
-                    <div className="dashboard-invite-img mb-3">
+                    <div className="app__dashboard-assets-invite-img">
                       <img src={item.img} alt="Invite-Img" />
                     </div>
-                    <div className="d-flex justify-content-between">
-                      <p className="text-dark m-0">{item.subDes}</p>
-                      <p className="m-0">{item.terms}</p>
+                    <div className="app__dashboard-assets-invite-terms">
+                      <p>{item.subDes}</p>
+                      <p>{item.terms}</p>
                     </div>
                   </Col>
                 );
@@ -176,8 +171,8 @@ const Dashboard = () => {
             </Row>
           </form>
         </Container>
-      </Layout>
-    </>
+      </div>
+    </Layout>
   );
 };
 

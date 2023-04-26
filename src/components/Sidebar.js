@@ -14,16 +14,16 @@ const Sidebar = () => {
 
   return (
     <>
-      <div className="sidebar">
-        <div className="mb-4">
-          <Link to={"/"} className="text-decoration-none">
-            <div className="sidebar-img">
+      <div className="app__sidebar">
+        <div className="app__sidebar-logo-section">
+          <Link to={"/"}>
+            <div className="app__sidebar-logo-img">
               <img src={Logo} alt="Arra Logo" className="w-100 h-100" />
             </div>
-            <p className="m-0 text-center">Real Estate Digital Assets</p>
+            <p>Real Estate Digital Assets</p>
           </Link>
         </div>
-        <div className="sidebar-links">
+        <div className="app__sidebar-links">
           {sidebarCtx.tabs.map((item) => {
             return (
               <Link
@@ -34,8 +34,8 @@ const Sidebar = () => {
                   isTabActive === item.id ? "active" : ""
                 }`}
               >
-                <span className="sidebar-badge">
-                  <RiVipDiamondLine className="sidebar-icons sidebar-assets-icon" />
+                <span className="app__sidebar-badge">
+                  <RiVipDiamondLine className="app__sidebar-icons sidebar-assets-icon" />
                   {item.name}
                 </span>
               </Link>

@@ -71,188 +71,179 @@ const Tools = () => {
   };
 
   return (
-    <>
-      <Layout>
-        <div>
-          <ul className="nav nav-tabs" id="myToolsTab" role="tablist">
-            {toolsTabsData.map((tab, index) => {
-              return (
-                <li className="nav-item" role="presentation" key={tab.tabName}>
-                  <button
-                    className={`nav-link ${index === 0 ? "active" : ""}`}
-                    id={`${tab.tabId}-tab`}
-                    data-bs-toggle="tab"
-                    data-bs-target={`#${tab.tabId}-tab-pane`}
-                    type="button"
-                    role="tab"
-                    aria-controls={`#${tab.tabId}-tab-pane`}
-                    aria-selected={index === 0 ? true : false}
-                  >
-                    {tab.tabName}
-                  </button>
-                </li>
-              );
-            })}
-          </ul>
-          {toolsTabsData.map((items, index) => {
-            return (
-              <div className="tab-content" id="myTabContent" key={index}>
-                <div
-                  className={`tab-pane fade ${
-                    index === 0 ? "show active" : ""
-                  }`}
-                  id={`${items.tabId}-tab-pane`}
-                  role="tabpanel"
-                  aria-labelledby={`${items.tabId}-tab`}
-                  tabIndex={index}
-                >
-                  {items.toolsTabData.map((tabData) => {
-                    return (
-                      <Container
-                        className="p-4 browse-container"
-                        key={tabData.searchName}
-                      >
-                        <form>
-                          <Row className="mb-3 align-items-center">
-                            <Col xs={8}>
-                              <input
-                                type="search"
-                                className="form-control leaderboards-input"
-                                placeholder={`🔍 ${tabData.searchName}`}
-                              />
-                            </Col>
-                            <Col>
-                              <button className="tools-platform-btn">
-                                <AiOutlinePlus />
-                                {tabData.firstBtnName}
-                              </button>
-                            </Col>
-                            <Col>
-                              <button className="tools-platform-btn">
-                                <AiOutlinePlus />
-                                {tabData.secondBtnName}
-                              </button>
-                            </Col>
-                          </Row>
-                        </form>
-                        <div className="tools-filter">
-                          <Row className="mb-3">
-                            {tabData.filterData.map((filtData) => {
-                              return (
-                                <Col key={filtData.labelName}>
-                                  <label className="form-label">
-                                    {filtData.labelName}
-                                  </label>
-                                  <select className="form-select">
-                                    <option>{filtData.option}</option>
-                                  </select>
-                                </Col>
-                              );
-                            })}
-                          </Row>
-                          <div>
-                            <h6>{tabData.boxDataName}</h6>
-                            <div className="d-flex justify-content-between">
-                              {tabData.creteriaData.map((item, index) => {
-                                return (
-                                  <button className="me-2" key={item.labelName}>
-                                    <input
-                                      type="checkbox"
-                                      id={item.id}
-                                      name={item.name}
-                                      className="tools-criteria"
-                                      checked={checkboxValues[item.name]}
-                                      onChange={handleCheckboxChange}
-                                    />
-                                    <label htmlFor={item.id}>Toggle</label>
-                                    {item.labelName}
-                                    {index}
-                                  </button>
-                                );
-                              })}
-                            </div>
-                          </div>
-                        </div>
-                        <div>
-                          {toolsTableData.map((items) => {
+    <Layout>
+      <ul
+        className="nav nav-tabs app__tools-tab"
+        id="myToolsTab"
+        role="tablist"
+      >
+        {toolsTabsData.map((tab, index) => {
+          return (
+            <li className="nav-item" role="presentation" key={tab.tabName}>
+              <button
+                className={`nav-link ${index === 0 ? "active" : ""}`}
+                id={`${tab.tabId}-tab`}
+                data-bs-toggle="tab"
+                data-bs-target={`#${tab.tabId}-tab-pane`}
+                type="button"
+                role="tab"
+                aria-controls={`#${tab.tabId}-tab-pane`}
+                aria-selected={index === 0 ? true : false}
+              >
+                {tab.tabName}
+              </button>
+            </li>
+          );
+        })}
+      </ul>
+      {toolsTabsData.map((items, index) => {
+        return (
+          <div className="tab-content" id="myTabContent" key={index}>
+            <div
+              className={`tab-pane fade ${index === 0 ? "show active" : ""}`}
+              id={`${items.tabId}-tab-pane`}
+              role="tabpanel"
+              aria-labelledby={`${items.tabId}-tab`}
+              tabIndex={index}
+            >
+              <div className="app__browse-container app__tools-section">
+                {items.toolsTabData.map((tabData) => {
+                  return (
+                    <Container key={tabData.searchName}>
+                      <form>
+                        <Row>
+                          <Col xs={8}>
+                            <input
+                              type="search"
+                              className="form-control app__leaderboards-input"
+                              placeholder={`🔍 ${tabData.searchName}`}
+                            />
+                          </Col>
+                          <Col>
+                            <button className="app__tools-platform-btn">
+                              <AiOutlinePlus />
+                              {tabData.firstBtnName}
+                            </button>
+                          </Col>
+                          <Col>
+                            <button className="app__tools-platform-btn">
+                              <AiOutlinePlus />
+                              {tabData.secondBtnName}
+                            </button>
+                          </Col>
+                        </Row>
+                      </form>
+                      <div className="app__tools-filter">
+                        <Row>
+                          {tabData.filterData.map((filtData) => {
                             return (
-                              <Table
-                                className="m-0 tools-table"
-                                key={items.colsData}
-                              >
-                                <thead>
-                                  <tr>
-                                    <th colSpan={6}>
-                                      COMPARISON ANAYLYSIS WITH KEY METRICS
-                                    </th>
-                                  </tr>
-                                  <tr>
-                                    <th>
-                                      <div>Platform</div>
-                                    </th>
-                                    <th>Annual Return</th>
-                                    <th>Return 3Y</th>
-                                    <th>Classification</th>
-                                    <th>Growth of 1000</th>
-                                    <th>Minimum Increment</th>
-                                  </tr>
-                                </thead>
-                                <tbody>
-                                  {items.colsData.map((item) => {
-                                    return (
-                                      <tr key={item.dataId}>
-                                        <td style={{ width: "180px" }}>
-                                          <div className="d-flex">
-                                            <div className="card-table-data-icon me-2">
-                                              arra
-                                            </div>
-                                            <div>
-                                              <h6 className="m-0 card-table-data-names">
-                                                {item.name}
-                                              </h6>
-                                              <p
-                                                className="m-0 card-table-data-names"
-                                                style={{ color: "#8ff129" }}
-                                              >
-                                                {item.subName}
-                                              </p>
-                                            </div>
-                                          </div>
-                                        </td>
-                                        <td>{item.annualReturn}</td>
-                                        <td>{item.return3Y}</td>
-                                        <td>{item.classification}</td>
-                                        <td style={{ width: "200px" }}>
-                                          <div className="line-bar-chart">
-                                            <Bar
-                                              data={lineBarData}
-                                              options={lineBarOptions}
-                                              style={{
-                                                width: "160px",
-                                                height: "150px",
-                                              }}
-                                            />
-                                          </div>
-                                        </td>
-                                        <td>{item.minInvestment}</td>
-                                      </tr>
-                                    );
-                                  })}
-                                </tbody>
-                              </Table>
+                              <Col key={filtData.labelName}>
+                                <label className="form-label">
+                                  {filtData.labelName}
+                                </label>
+                                <select className="form-select">
+                                  <option>{filtData.option}</option>
+                                </select>
+                              </Col>
                             );
                           })}
+                        </Row>
+                        <div className="app__tools-filter-criteria">
+                          <h6>{tabData.boxDataName}</h6>
+                          <div>
+                            {tabData.creteriaData.map((item) => {
+                              return (
+                                <button key={item.labelName} type="button">
+                                  <input
+                                    type="checkbox"
+                                    id={item.id}
+                                    name={item.name}
+                                    className="app__tools-filter-criteria-input"
+                                    checked={checkboxValues[item.name]}
+                                    onChange={handleCheckboxChange}
+                                  />
+                                  <label htmlFor={item.id}>Toggle</label>
+                                  {item.labelName}
+                                </button>
+                              );
+                            })}
+                          </div>
                         </div>
-                      </Container>
-                    );
-                  })}
-                </div>
+                      </div>
+                      <div>
+                        {toolsTableData.map((items) => {
+                          return (
+                            <Table
+                              className="app__tools-table"
+                              key={items.colsData}
+                            >
+                              <thead>
+                                <tr>
+                                  <th colSpan={6}>
+                                    COMPARISON ANAYLYSIS WITH KEY METRICS
+                                  </th>
+                                </tr>
+                                <tr>
+                                  <th>
+                                    <div>Platform</div>
+                                  </th>
+                                  <th>Annual Return</th>
+                                  <th>Return 3Y</th>
+                                  <th>Classification</th>
+                                  <th>Growth of 1000</th>
+                                  <th>Minimum Increment</th>
+                                </tr>
+                              </thead>
+                              <tbody>
+                                {items.colsData.map((item) => {
+                                  return (
+                                    <tr key={item.dataId}>
+                                      <td style={{ width: "180px" }}>
+                                        <div className="app__tools-card-table-data">
+                                          <div className="app__tools-card-table-data-icon">
+                                            arra
+                                          </div>
+                                          <div>
+                                            <h6>{item.name}</h6>
+                                            <p style={{ color: "#8ff129" }}>
+                                              {item.subName}
+                                            </p>
+                                          </div>
+                                        </div>
+                                      </td>
+                                      <td>{item.annualReturn}</td>
+                                      <td>{item.return3Y}</td>
+                                      <td>{item.classification}</td>
+                                      <td style={{ width: "200px" }}>
+                                        <div className="app__tools-line-bar-chart">
+                                          <Bar
+                                            data={lineBarData}
+                                            options={lineBarOptions}
+                                            style={{
+                                              width: "160px",
+                                              height: "150px",
+                                            }}
+                                          />
+                                        </div>
+                                      </td>
+                                      <td>{item.minInvestment}</td>
+                                    </tr>
+                                  );
+                                })}
+                              </tbody>
+                            </Table>
+                          );
+                        })}
+                      </div>
+                    </Container>
+                  );
+                })}
               </div>
-            );
-          })}
-        </div>
-      </Layout>
-    </>
+            </div>
+          </div>
+        );
+      })}
+    </Layout>
   );
 };
 export default Tools;
