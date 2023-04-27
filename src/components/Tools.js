@@ -112,20 +112,20 @@ const Tools = () => {
                     <Container key={tabData.searchName}>
                       <form>
                         <Row>
-                          <Col xs={8}>
+                          <Col xs={8} md={6}>
                             <input
                               type="search"
                               className="form-control app__leaderboards-input"
                               placeholder={`🔍 ${tabData.searchName}`}
                             />
                           </Col>
-                          <Col>
+                          <Col md={2}>
                             <button className="app__tools-platform-btn">
                               <AiOutlinePlus />
                               {tabData.firstBtnName}
                             </button>
                           </Col>
-                          <Col>
+                          <Col md={2}>
                             <button className="app__tools-platform-btn">
                               <AiOutlinePlus />
                               {tabData.secondBtnName}

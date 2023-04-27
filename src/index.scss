@@ -33,16 +33,16 @@ code {
 }
 
 .app {
-  @include display-direction-properties(row);
+  @include display-direction-properties(column);
   padding: 0;
 
   &__layout {
-    width: calc(100% - 230px);
+    @include display-direction-properties(row);
   }
 
-  @media screen and (min-width: 1024px) {
+  @media screen and (max-width: 1024px) {
     &__layout {
-      width: calc(100% - 180px);
+      width: 100%;
     }
   }
 
@@ -51,6 +51,45 @@ code {
   &__navbar {
     border-bottom: 1px solid #0000001a;
     padding: 10px 0;
+  }
+
+  &__navbar-logo-section {
+    min-width: 230px;
+    @include padding(0, 10px, 0, 10px);
+  }
+
+  &__navbar-logo {
+    @include direction-justitfy-align-properities(row, center, center);
+    & a {
+      text-decoration: none !important;
+    }
+  }
+
+  &__navbar-logo-img {
+    height: 30px;
+
+    & img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+
+  &__navbar-logo-text {
+    margin: 0;
+    font-size: 10px;
+    color: #8080809c;
+    text-align: center;
+    text-decoration: none;
+  }
+
+  &__navbar-left-section {
+    align-items: center;
+    justify-content: space-between;
+    width: -webkit-fill-available;
+
+    & div {
+      display: flex;
+    }
   }
 
   &__navbar-badges-left {
@@ -78,6 +117,7 @@ code {
 
   &__navbar-right-section {
     align-items: center;
+    min-width: 150px;
   }
 
   &__navbar-badges-right {
@@ -169,42 +209,158 @@ code {
     padding: 0.5rem 1rem;
   }
 
-  @media screen and (min-width: 1024px) {
-    &__sidebar {
-      width: 180px;
+  #basic-nav-dropdown {
+    display: none;
+    margin-left: 10px;
+  }
+
+  #desktop-tabs {
+    display: flex;
+  }
+
+  &__navbar-hamburger {
+    display: none;
+    cursor: pointer;
+  }
+
+  &__navbar-more-tabs {
+    display: none;
+  }
+
+  @media screen and (max-width: 1024px) {
+    &__navbar-logo-section {
+      min-width: 9rem;
+      z-index: 1100;
+    }
+
+    &__navbar-left-section {
+      flex-direction: column !important;
+      align-items: flex-start;
+      max-width: fit-content;
+      position: fixed;
+      overflow: hidden;
+      display: none;
+
+      & div {
+        flex-direction: column;
+      }
+
+      &.show {
+        top: 75px;
+        width: 200px;
+        height: 200px;
+        overflow: auto;
+        display: block;
+        background: white;
+        border-radius: 10px;
+        z-index: 10;
+        border: 1px solid #0000001d;
+      }
+    }
+
+    &__navbar-badges-left {
+      @include padding(0, 0, 0, 0);
+      background-color: transparent !important;
+      color: #00000060 !important;
+      border: none;
+      border-radius: 0;
+      font-size: 14px;
+      transition: none;
+    }
+
+    .nav-link.active &__navbar-badges-left {
+      background-color: transparent !important;
+      color: black !important;
+      border: none;
+    }
+
+    .nav-link:hover &__navbar-badges-left {
+      background-color: transparent !important;
+      color: black !important;
+      border: none;
+    }
+
+    .nav-link:hover {
+      background-color: #f8f9fa !important;
+    }
+
+    #basic-nav-dropdown {
+      display: block;
+
+      & ~ div {
+        overflow: auto;
+        max-height: 250px;
+        padding: 0;
+
+        & a:hover {
+          background: #0000000f;
+        }
+      }
+    }
+
+    &__navbar-more-tabs {
+      display: block;
+
+      & button {
+        background-color: transparent;
+        border: 1px solid #0000001a;
+        @include padding(5px, 15px, 5px, 15px);
+        border-radius: 10px;
+      }
+    }
+
+    &__navbar-hamburger {
+      display: block;
+      padding-bottom: 5px;
+
+      & svg {
+        font-size: 20px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 320px) {
+    &__navbar {
+      flex-direction: row;
+      flex-wrap: wrap;
+
+      & .container-fluid {
+        justify-content: flex-start;
+      }
+    }
+
+    &__navbar-logo-section {
+      margin-bottom: 6px;
+    }
+
+    &__navbar-right-section .nav-item {
+      & .nav-link {
+        padding: 6px;
+      }
+    }
+
+    &__navbar-search-icon,
+    &__navbar-notification-icon,
+    &__navbar-user-icon {
+      padding: 7px;
+    }
+
+    .app__navbar-badge {
+      right: 2px;
+      top: 2px;
     }
   }
 
   // Sidebar
 
   &__sidebar {
-    width: 230px;
-    padding: 10px;
+    min-width: 230px;
+    @include padding(15px, 10px, 15px, 10px);
     border-right: 1px solid #0000001a;
   }
 
   &__sidebar-logo-section {
-    margin-bottom: 20px;
-
-    & a {
-      text-decoration: none;
-
-      & p {
-        margin: 0;
-        font-size: 10px;
-        color: #8080809c;
-        text-align: center;
-      }
-    }
-  }
-
-  &__sidebar-logo-img {
-    height: 30px;
-
-    & img {
-      width: 100%;
-      height: 100%;
-    }
+    display: none;
   }
 
   &__sidebar-links {
@@ -250,13 +406,54 @@ code {
     }
   }
 
-  @media screen and (min-width: 1024px) {
-    &__sidebar {
-      width: 180px;
+  #sidebarOffcanvas {
+    display: none;
+  }
+
+  @media screen and (max-width: 1024px) {
+    .offcanvas-backdrop.active {
+      opacity: 0.5;
     }
 
-    &__sidebar-badge {
-      font-size: 12px;
+    &__sidebar {
+      @include padding(10px, 10px, 15px, 10px);
+      position: fixed;
+      background: white;
+      top: 0;
+      left: -100%;
+      width: 262px;
+      height: 100vh;
+      z-index: 1050;
+      transition: all 0.3s ease-in-out;
+    }
+
+    &__sidebar-logo-section {
+      @include display-justify-properities(flex-end);
+      min-width: 240px;
+      height: 72px;
+    }
+
+    &__sidebar-close-btn {
+      @include padding(6px, 0, 0, 0);
+
+      & svg {
+        font-size: 30px;
+        cursor: pointer;
+      }
+    }
+
+    #sidebarOffcanvas {
+      display: block;
+    }
+
+    &__sidebar.active {
+      left: 0;
+    }
+  }
+
+  @media screen and (max-width: 576px) {
+    &__sidebar.active {
+      width: 100%;
     }
   }
 
@@ -316,10 +513,6 @@ code {
     }
   }
 
-  .flexible {
-    flex-grow: 1;
-  }
-
   table {
     margin: 0;
   }
@@ -368,7 +561,7 @@ code {
 
   &__home-stories-card-img {
     width: 380px;
-    height: 120px;
+    min-height: 120px;
     padding: 0;
     border: 0;
     border-top-left-radius: 20px !important;
@@ -414,6 +607,85 @@ code {
       @include margin(0, 24px, 0, 0);
     }
   }
+
+  @media screen and (max-width: 1024px) {
+    &__home-container {
+      width: 100%;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    & .container {
+      @include padding(24px, 16px, 20px, 16px);
+    }
+
+    &__home-stories-card-body {
+      & h5 {
+        font-size: 16px;
+      }
+      & p {
+        font-size: 12px;
+      }
+    }
+  }
+
+  @media screen and (max-width: 320px) {
+    &__home-container {
+      height: calc(100vh - 119px);
+    }
+
+    & .container {
+      @include padding(20px, 12px, 20px, 12px);
+    }
+
+    &__home-cards {
+      & h4 {
+        font-size: 20px;
+      }
+    }
+
+    &__home-card {
+      & h5 {
+        font-size: 18px;
+      }
+
+      & h6 {
+        font-size: 16px;
+      }
+
+      & .card-top {
+        @include padding(20px, 15px, 5px, 15px);
+      }
+
+      & .card-bottom {
+        @include padding(5px, 15px, 20px, 15px);
+      }
+    }
+
+    &__home-stories-card {
+      flex-direction: column;
+    }
+
+    &__home-stories-card-img {
+      width: 100%;
+      border-top-right-radius: 20px !important;
+      border-bottom-left-radius: 0 !important;
+
+      & img {
+        border-radius: 20px 20px 0 0;
+      }
+    }
+
+    &__home-stories-card-body {
+      width: 100%;
+
+      & h5 {
+        font-size: 14px;
+      }
+    }
+  }
+
+  // Dashboard
 
   &__dashboard-portifolio {
     border: 1px solid #dee2e6;
@@ -595,6 +867,28 @@ code {
       color: black;
     }
   }
+
+  @media screen and (max-width: 1024px) {
+    &__dashboard-portifolio {
+      margin-bottom: 20px;
+    }
+
+    &__dashboard-assets-invite-img {
+      height: 100px;
+      margin-bottom: 12px;
+
+      & img {
+        height: 100px;
+        width: 100px;
+      }
+    }
+
+    &__dashboard-assets-invite-terms p {
+      font-size: 10px;
+    }
+  }
+
+  // Leaderboards
 
   &__leaderboards-section {
     & .container h5,

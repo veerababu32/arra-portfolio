@@ -17,7 +17,7 @@ const Dashboard = () => {
         <Container>
           <form>
             <Row>
-              <Col xs={7}>
+              <Col xs={7} md={12}>
                 <h5>Portifolio</h5>
                 <div className="app__dashboard-portifolio">
                   <div className="app__dashboard-portifolio-content">
@@ -36,7 +36,7 @@ const Dashboard = () => {
               </Col>
               {dashboardYourAssets.map((items) => {
                 return (
-                  <Col xs={5} key={items.name}>
+                  <Col xs={5} md={12} key={items.name}>
                     <h5>{items.name}</h5>
                     <div className="app__dashboard-assets">
                       {items.data.map(function (item) {

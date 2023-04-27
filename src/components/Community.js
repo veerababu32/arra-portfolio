@@ -40,7 +40,7 @@ const Community = () => {
       <div className="app__community-container">
         <Container>
           <Row>
-            <Col xs={9}>
+            <Col xs={9} md={8}>
               <div className="app__community-input-section">
                 <div className="d-flex">
                   <input
@@ -102,7 +102,7 @@ const Community = () => {
                 );
               })}
             </Col>
-            <Col xs={3}>
+            <Col xs={3} md={4}>
               {communityDanielInfo.map((item) => {
                 return (
                   <Card

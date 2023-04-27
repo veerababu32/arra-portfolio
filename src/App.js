@@ -6,7 +6,7 @@ import Community from "./components/Community";
 import Tools from "./components/Tools";
 import Browse from "./components/Browse";
 import ErrorPage from "./ErrorPage.js";
-import SidebarContext from "./store/SidebarContext";
+import AppContext from "./store/AppContext";
 import { sideBarData } from "./constants/data";
 import { useState } from "react";
 
@@ -50,6 +50,7 @@ const App = () => {
     { id: "s3", name: "Guides & Tutorials" },
     { id: "s4", name: "Help" },
   ]);
+  const [hell, setHell] = useState(true);
 
   const changeSidebarTabs = (tabName) => {
     sideBarData.map((item) => {
@@ -60,15 +61,21 @@ const App = () => {
     });
   };
 
+  const toggleSidebarFun = () => {
+    setHell(!hell);
+  };
+
   const sidebarContextData = {
     tabs: sidebarTabs,
     addTabs: changeSidebarTabs,
+    toggleSidebar: hell,
+    toggleSidebarFun: toggleSidebarFun,
   };
 
   return (
-    <SidebarContext.Provider value={sidebarContextData}>
+    <AppContext.Provider value={sidebarContextData}>
       <RouterProvider router={router} />
-    </SidebarContext.Provider>
+    </AppContext.Provider>
   );
 };
 

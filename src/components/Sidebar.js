@@ -1,30 +1,35 @@
 import { Link } from "react-router-dom";
-import { RiVipDiamondLine } from "react-icons/ri";
-import Logo from "../assets/images/logo.svg";
-import { useContext, useState } from "react";
-import SidebarContext from "../store/SidebarContext";
+import { RiCloseLine, RiVipDiamondLine } from "react-icons/ri";
+import { useContext, useEffect, useState } from "react";
+import AppContext from "../store/AppContext";
 
 const Sidebar = () => {
-  const sidebarCtx = useContext(SidebarContext);
-  const [isTabActive, setIsTabActive] = useState(sidebarCtx.tabs[0].id);
+  const appCtx = useContext(AppContext);
+  const [isTabActive, setIsTabActive] = useState(appCtx.tabs[0].id);
+  const [show, setShow] = useState(true);
+
+  const handleClose = () => setShow(!show);
+  const handleShow = () => setShow(!show);
 
   const activeTabHandler = (tabId) => {
     setIsTabActive(tabId);
   };
 
+  useEffect(() => {
+    handleShow();
+    // eslint-disable-next-line
+  }, [appCtx]);
+
   return (
     <>
-      <div className="app__sidebar">
+      <div className={`app__sidebar ${show ? "active" : ""}`}>
         <div className="app__sidebar-logo-section">
-          <Link to={"/"}>
-            <div className="app__sidebar-logo-img">
-              <img src={Logo} alt="Arra Logo" className="w-100 h-100" />
-            </div>
-            <p>Real Estate Digital Assets</p>
-          </Link>
+          <div className="app__sidebar-close-btn" onClick={handleClose}>
+            <RiCloseLine />
+          </div>
         </div>
         <div className="app__sidebar-links">
-          {sidebarCtx.tabs.map((item) => {
+          {appCtx.tabs.map((item) => {
             return (
               <Link
                 key={item.id}

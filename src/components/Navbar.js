@@ -1,16 +1,18 @@
 import { Container, Nav } from "react-bootstrap";
 import { BsEnvelope, BsSearch } from "react-icons/bs";
 import { IoMdNotificationsOutline } from "react-icons/io";
-import { AiOutlineUser, AiOutlineClose } from "react-icons/ai";
-import { FaFile, FaUsers } from "react-icons/fa";
+import { AiOutlineUser, AiOutlineClose, AiOutlineDown } from "react-icons/ai";
+import { FaBars, FaFile, FaUsers } from "react-icons/fa";
 import { CiLogout } from "react-icons/ci";
 import { NavLink, Link } from "react-router-dom";
 import { navbarTabs } from "../constants/data";
+import Logo from "../assets/images/logo.svg";
 import { useContext, useEffect, useState, useRef } from "react";
-import SidebarContext from "../store/SidebarContext";
+import AppContext from "../store/AppContext";
 
 const Navbar = () => {
-  const sidebarCtx = useContext(SidebarContext);
+  const appCtx = useContext(AppContext);
+  const [showMoretabs, setShowMoretabs] = useState(false);
   const [showSearchBar, setShowSearchBar] = useState(true);
   const [showNotification, setShowNotification] = useState(true);
   const [showUser, setShowUser] = useState(true);
@@ -18,7 +20,11 @@ const Navbar = () => {
   const userRef = useRef();
 
   const tabHandler = (tabId) => {
-    sidebarCtx.addTabs(tabId);
+    appCtx.addTabs(tabId);
+  };
+
+  const moretabsHandler = () => {
+    setShowMoretabs(!showMoretabs);
   };
 
   const handleSearchBar = (state) => {
@@ -49,28 +55,74 @@ const Navbar = () => {
   return (
     <>
       <div className="app__navbar navbar navbar-expand navbar-light">
+        <div className="app__navbar-logo-section">
+          <div className="app__navbar-logo">
+            <Link to={"/"}>
+              <div className="app__navbar-logo-img">
+                <img src={Logo} alt="Arra Logo" />
+              </div>
+              <p className="app__navbar-logo-text">
+                Real Estate Digital Assets
+              </p>
+            </Link>
+          </div>
+        </div>
         <Container fluid>
-          <Nav className="navbar-nav">
-            {navbarTabs.map((item) => {
-              return (
-                <NavLink
-                  to={`/${item.link}`}
-                  className="nav-link"
-                  key={item.tabId}
-                  onClick={() => tabHandler(item.name)}
-                >
-                  <span className="app__navbar-badges-left">{item.name}</span>
-                </NavLink>
-              );
-            })}
+          <div className="app__navbar-more-tabs" onClick={moretabsHandler}>
+            <button type="button">
+              More Tabs <AiOutlineDown />
+            </button>
+          </div>
+          <Nav
+            className={`navbar-nav app__navbar-left-section ${
+              showMoretabs ? "show" : ""
+            }`}
+          >
+            <div>
+              {navbarTabs.map((item) => {
+                return (
+                  <NavLink
+                    to={`/${item.link}`}
+                    className="nav-link app__navbar-badges-left"
+                    key={item.tabId}
+                    onClick={() => tabHandler(item.name)}
+                  >
+                    {/* {item.name} */}
+                    <span className="app__navbar-badges-left">{item.name}</span>
+                  </NavLink>
+                );
+              })}
+            </div>
+            <div>
+              <Link className="nav-link" to={"#"} id="buySell">
+                <span className="app__navbar-badges-right">Buy/Sell</span>
+              </Link>
+              <Link className="nav-link" to={"#"} id="myStore">
+                <span className="app__navbar-badges-right">My Store</span>
+              </Link>
+            </div>
+            {/* <NavDropdown title="More Tabs" id="basic-nav-dropdown">
+              {navbarTabs.map((item) => {
+                return (
+                  <NavLink
+                    to={`/${item.link}`}
+                    className="nav-link"
+                    key={item.tabId}
+                    onClick={() => tabHandler(item.name)}
+                  >
+                    {item.name}
+                  </NavLink>
+                );
+              })}
+              <Link className="nav-link" to={"#"}>
+                Buy/Sell
+              </Link>
+              <Link className="nav-link" to={"#"}>
+                My Store
+              </Link>
+            </NavDropdown> */}
           </Nav>
           <Nav className="navbar-nav app__navbar-right-section">
-            <Link className="nav-link" to={"#"}>
-              <span className="app__navbar-badges-right">Buy/Sell</span>
-            </Link>
-            <Link className="nav-link" to={"#"}>
-              <span className="app__navbar-badges-right">My Store</span>
-            </Link>
             <div className="nav-item">
               <Link
                 className="nav-link"
@@ -189,6 +241,12 @@ const Navbar = () => {
                   <CiLogout className="me-2" /> Logout
                 </Link>
               </div>
+            </div>
+            <div
+              onClick={() => appCtx.toggleSidebarFun()}
+              className="app__navbar-hamburger"
+            >
+              <FaBars />
             </div>
           </Nav>
         </Container>
