@@ -11,14 +11,14 @@ const Leaderboards = () => {
           <h5>Leaderboards</h5>
           <form>
             <Row>
-              <Col xs={10}>
+              <Col xs={12} sm={8} lg={10}>
                 <input
                   type={"search"}
                   className="form-control app__leaderboards-input"
                   placeholder="🔍 Search Any"
                 />
               </Col>
-              <Col xs={2}>
+              <Col xs={6} sm={4} lg={2}>
                 <select className="form-select app__leaderboards-input">
                   <option>Filter</option>
                   <option value="1">One</option>
@@ -31,10 +31,13 @@ const Leaderboards = () => {
           <div>
             {leaderboardsTableData.map(function (items) {
               return (
-                <div className="mb-4" key={items.title}>
-                  <h5 className="mb-3">{items.title}</h5>
+                <div
+                  className="app__leaderboards-table-section"
+                  key={items.title}
+                >
+                  <h5>{items.title}</h5>
                   {
-                    <Table hover className="m-0 app__leaderboards-table">
+                    <Table hover responsive className="app__leaderboards-table">
                       <thead>
                         <tr
                           style={{

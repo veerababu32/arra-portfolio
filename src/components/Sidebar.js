@@ -35,14 +35,12 @@ const Sidebar = () => {
                 key={item.id}
                 to={"#"}
                 onClick={() => activeTabHandler(item.id)}
-                className={`nav-link ${
+                className={`nav-link app__sidebar-badge ${
                   isTabActive === item.id ? "active" : ""
                 }`}
               >
-                <span className="app__sidebar-badge">
-                  <RiVipDiamondLine className="app__sidebar-icons sidebar-assets-icon" />
-                  {item.name}
-                </span>
+                <RiVipDiamondLine className="app__sidebar-icons sidebar-assets-icon" />
+                {item.name}
               </Link>
             );
           })}

@@ -16,6 +16,7 @@ const Navbar = () => {
   const [showSearchBar, setShowSearchBar] = useState(true);
   const [showNotification, setShowNotification] = useState(true);
   const [showUser, setShowUser] = useState(true);
+  const moreTabsRef = useRef();
   const notificationRef = useRef();
   const userRef = useRef();
 
@@ -41,6 +42,10 @@ const Navbar = () => {
 
   useEffect(() => {
     const handleClickOutside = (event) => {
+      if (!moreTabsRef?.current?.contains(event.target)) {
+        setShowMoretabs(false);
+      }
+
       if (!notificationRef?.current?.contains(event.target)) {
         setShowNotification(true);
       }
@@ -50,7 +55,7 @@ const Navbar = () => {
       }
     };
     document.addEventListener("mousedown", handleClickOutside);
-  }, [notificationRef, userRef]);
+  }, [notificationRef, userRef, moreTabsRef]);
 
   return (
     <>
@@ -68,72 +73,64 @@ const Navbar = () => {
           </div>
         </div>
         <Container fluid>
-          <div className="app__navbar-more-tabs" onClick={moretabsHandler}>
-            <button type="button">
-              More Tabs <AiOutlineDown />
-            </button>
+          <div ref={moreTabsRef} style={{ display: "contents" }}>
+            <div className="app__navbar-more-tabs" onClick={moretabsHandler}>
+              <button type="button">
+                More Tabs <AiOutlineDown />
+              </button>
+            </div>
+            <Nav
+              className={`navbar-nav app__navbar-left-section ${
+                showMoretabs ? "show" : ""
+              }`}
+            >
+              <div>
+                {navbarTabs.map((item) => {
+                  return (
+                    <NavLink
+                      to={`/${item.link}`}
+                      className="nav-link app__navbar-badges-left"
+                      key={item.tabId}
+                      onClick={() => {
+                        tabHandler(item.name);
+                        moretabsHandler();
+                      }}
+                    >
+                      {item.name}
+                    </NavLink>
+                  );
+                })}
+              </div>
+              <div>
+                <Link
+                  className="nav-link app__navbar-badges-right"
+                  to={"#"}
+                  id="buySell"
+                  onClick={moretabsHandler}
+                >
+                  Buy/Sell
+                </Link>
+                <Link
+                  className="nav-link app__navbar-badges-right"
+                  to={"#"}
+                  id="myStore"
+                  onClick={moretabsHandler}
+                >
+                  My Store
+                </Link>
+              </div>
+            </Nav>
           </div>
-          <Nav
-            className={`navbar-nav app__navbar-left-section ${
-              showMoretabs ? "show" : ""
-            }`}
-          >
-            <div>
-              {navbarTabs.map((item) => {
-                return (
-                  <NavLink
-                    to={`/${item.link}`}
-                    className="nav-link app__navbar-badges-left"
-                    key={item.tabId}
-                    onClick={() => tabHandler(item.name)}
-                  >
-                    {/* {item.name} */}
-                    <span className="app__navbar-badges-left">{item.name}</span>
-                  </NavLink>
-                );
-              })}
-            </div>
-            <div>
-              <Link className="nav-link" to={"#"} id="buySell">
-                <span className="app__navbar-badges-right">Buy/Sell</span>
-              </Link>
-              <Link className="nav-link" to={"#"} id="myStore">
-                <span className="app__navbar-badges-right">My Store</span>
-              </Link>
-            </div>
-            {/* <NavDropdown title="More Tabs" id="basic-nav-dropdown">
-              {navbarTabs.map((item) => {
-                return (
-                  <NavLink
-                    to={`/${item.link}`}
-                    className="nav-link"
-                    key={item.tabId}
-                    onClick={() => tabHandler(item.name)}
-                  >
-                    {item.name}
-                  </NavLink>
-                );
-              })}
-              <Link className="nav-link" to={"#"}>
-                Buy/Sell
-              </Link>
-              <Link className="nav-link" to={"#"}>
-                My Store
-              </Link>
-            </NavDropdown> */}
-          </Nav>
           <Nav className="navbar-nav app__navbar-right-section">
             <div className="nav-item">
               <Link
-                className="nav-link"
+                className="nav-link app__navbar-search-icon"
                 to={"#"}
                 onClick={() => {
                   handleSearchBar(false);
                 }}
               >
-                <span className="app__navbar-search-icon">
-                  <BsSearch />
-                </span>
+                <BsSearch />
               </Link>
               <div
                 className="app__navbar-search-block"
@@ -171,16 +168,14 @@ const Navbar = () => {
               ref={notificationRef}
             >
               <Link
-                className="nav-link"
+                className="nav-link app__navbar-notification-icon"
                 data-toggle="dropdown"
                 to={"#"}
                 aria-expanded={showNotification ? "false" : "true"}
                 onClick={handleNotification}
               >
-                <span className="app__navbar-notification-icon">
-                  <IoMdNotificationsOutline />
-                  <span className="badge bg-danger app__navbar-badge">15</span>
-                </span>
+                <IoMdNotificationsOutline />
+                <span className="badge bg-danger app__navbar-badge">15</span>
               </Link>
               <div
                 className={`dropdown-menu app__navbar-notification-dropdown dropdown-menu-right ${
@@ -217,15 +212,13 @@ const Navbar = () => {
               ref={userRef}
             >
               <Link
-                className="nav-link"
+                className="nav-link app__navbar-user-icon"
                 data-toggle="dropdown"
                 to={"#"}
                 aria-expanded={showUser ? "false" : "true"}
                 onClick={handleUser}
               >
-                <span className="app__navbar-user-icon">
-                  <AiOutlineUser />
-                </span>
+                <AiOutlineUser />
               </Link>
               <div
                 className={`dropdown-menu app__navbar-user-dropdown dropdown-menu-right ${

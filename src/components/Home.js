@@ -11,7 +11,7 @@ const Home = () => {
           <Row className="gy-3 gx-3">
             {homeCardsData.map((item) => {
               return (
-                <Col xs={12} md={6} lg={4} key={item.name}>
+                <Col xs={12} md={12} lg={4} key={item.name}>
                   <div className="app__home-cards">
                     <h4>{item.title}</h4>
                     <div className={`app__home-card ${item.card}`}>

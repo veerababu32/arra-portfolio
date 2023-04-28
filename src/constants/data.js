@@ -584,6 +584,7 @@ const communityStoriesData = [
 
 const communityDanielAccordian = [
   {
+    id: 16,
     name: "Daniel Saliba",
     img: Daniel,
     carouselImg: CarouselImg,
@@ -594,6 +595,7 @@ const communityDanielAccordian = [
 
 const communityDanielInfo = [
   {
+    id: 17,
     name: "Daniel Saliba",
     img: Daniel,
     mail: "@danielsaliba",
@@ -606,6 +608,7 @@ const communityDanielInfo = [
 
 const communityTrendingData = [
   {
+    id: 18,
     title: "Trending News",
     btn: "View All",
     data: [
@@ -623,6 +626,7 @@ const communityTrendingData = [
     ],
   },
   {
+    id: 19,
     title: "Trending Groups",
     btn: "View All",
     data: [

@@ -17,8 +17,8 @@ const Dashboard = () => {
         <Container>
           <form>
             <Row>
-              <Col xs={7} md={12}>
-                <h5>Portifolio</h5>
+              <Col lg={12} xl={7}>
+                <h4>Portifolio</h4>
                 <div className="app__dashboard-portifolio">
                   <div className="app__dashboard-portifolio-content">
                     <div className="app__dashboard-portifolio-content-left">
@@ -36,8 +36,8 @@ const Dashboard = () => {
               </Col>
               {dashboardYourAssets.map((items) => {
                 return (
-                  <Col xs={5} md={12} key={items.name}>
-                    <h5>{items.name}</h5>
+                  <Col lg={12} xl={5} key={items.name}>
+                    <h4>{items.name}</h4>
                     <div className="app__dashboard-assets">
                       {items.data.map(function (item) {
                         return (
@@ -74,12 +74,13 @@ const Dashboard = () => {
               {dashboardPerformanceTable.map((items) => {
                 return (
                   <Col
-                    xs={7}
+                    md={12}
+                    lg={7}
                     className="app__dashboard-assets-performance"
                     key={items.name}
                   >
-                    <div className="align-items-center app__dashboard-assets-performance-header">
-                      <h5>{items.name}</h5>
+                    <div className="app__dashboard-assets-performance-header">
+                      <h4>{items.name}</h4>
                       <div>
                         <select className="form-select">
                           <option>{items.firstSelector}</option>
@@ -89,7 +90,12 @@ const Dashboard = () => {
                         </select>
                       </div>
                     </div>
-                    <Table className="table-borderless table-hover">
+                    <Table
+                      className="app__dashboard-table"
+                      borderless
+                      hover
+                      responsive
+                    >
                       <thead>
                         <tr>
                           <th>{items.tableTitleOne}</th>
@@ -143,6 +149,8 @@ const Dashboard = () => {
               {dashboardInviteData.map((item) => {
                 return (
                   <Col
+                    md={12}
+                    lg={5}
                     className="app__dashboard-assets-invite"
                     key={item.title}
                   >
