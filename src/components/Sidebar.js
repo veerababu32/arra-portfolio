@@ -1,35 +1,37 @@
 import { Link } from "react-router-dom";
 import { RiCloseLine, RiVipDiamondLine } from "react-icons/ri";
-import { useContext, useEffect, useState } from "react";
+import { useContext, useRef, useState } from "react";
 import AppContext from "../store/AppContext";
 
 const Sidebar = () => {
-  const appCtx = useContext(AppContext);
-  const [isTabActive, setIsTabActive] = useState(appCtx.tabs[0].id);
-  const [show, setShow] = useState(true);
-
-  const handleClose = () => setShow(!show);
-  const handleShow = () => setShow(!show);
+  const { tabs, toggleSidebar, toggleSidebarFun } = useContext(AppContext);
+  const [isTabActive, setIsTabActive] = useState(tabs[0].id);
+  const sidebarRef = useRef();
 
   const activeTabHandler = (tabId) => {
     setIsTabActive(tabId);
   };
 
-  useEffect(() => {
-    handleShow();
-    // eslint-disable-next-line
-  }, [appCtx]);
-
   return (
     <>
-      <div className={`app__sidebar ${show ? "active" : ""}`}>
+      <div
+        className={`app__offcanvasSidebar ${toggleSidebar ? "active" : ""}`}
+        onClick={() => toggleSidebarFun()}
+      ></div>
+      <div
+        className={`app__sidebar ${toggleSidebar ? "active" : ""}`}
+        ref={sidebarRef}
+      >
         <div className="app__sidebar-logo-section">
-          <div className="app__sidebar-close-btn" onClick={handleClose}>
+          <div
+            className="app__sidebar-close-btn"
+            onClick={() => toggleSidebarFun()}
+          >
             <RiCloseLine />
           </div>
         </div>
         <div className="app__sidebar-links">
-          {appCtx.tabs.map((item) => {
+          {tabs.map((item) => {
             return (
               <Link
                 key={item.id}

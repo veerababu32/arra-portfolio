@@ -36,6 +36,10 @@ code {
   height: 10px;
 }
 
+select {
+  cursor: pointer;
+}
+
 .app {
   @include display-direction-properties(column);
   padding: 0;
@@ -103,7 +107,7 @@ code {
     border-radius: 15px;
     color: black !important;
     font-size: 14px;
-    transition: 0.3s;
+    transition: all 0.3s ease-in-out;
     margin-right: 10px;
 
     &.active {
@@ -116,7 +120,7 @@ code {
       background-color: black !important;
       border: 1px solid black;
       color: #8ff129 !important;
-      transition: 0.3s;
+      transition: all 0.3s ease-in-out;
     }
 
     &:last-child {
@@ -137,14 +141,14 @@ code {
     border-radius: 15px;
     color: white;
     font-size: 14px;
-    transition: 0.3s;
+    transition: all 0.3s ease-in-out;
     margin-right: 10px;
 
     &:hover {
       background-color: white !important;
       color: #8ff129;
       border: 1px solid #0000001a;
-      transition: 0.3s;
+      transition: all 0.3s ease-in-out;
     }
 
     &:last-child {
@@ -177,7 +181,7 @@ code {
     @include position-properties(0, 0, 0, 0);
     @include padding(16px, 16px, 16px, 16px);
     @include display-direction-justify-properties(column, center);
-    z-index: 10;
+    z-index: 1200;
     background-color: white;
   }
 
@@ -253,13 +257,16 @@ code {
     &__navbar-left-section {
       flex-direction: column !important;
       align-items: flex-start;
+      flex-wrap: inherit;
       max-width: fit-content;
       position: fixed;
       overflow: hidden;
-      display: none;
+      top: -100%;
+      transition: all 0.3s ease-in-out;
 
       & div {
         flex-direction: column;
+        width: -webkit-fill-available;
       }
 
       &.show {
@@ -267,11 +274,11 @@ code {
         width: 200px;
         height: 200px;
         overflow: auto;
-        display: block;
         background: white;
         border-radius: 10px;
         z-index: 10;
         border: 1px solid #0000001d;
+        transition: all 0.3s ease-in-out;
       }
     }
 
@@ -398,6 +405,14 @@ code {
     }
   }
 
+  @media screen and (max-width: 320px) {
+    &__navbar-left-section {
+      &.show {
+        top: 96px;
+      }
+    }
+  }
+
   // Sidebar
 
   &__sidebar {
@@ -430,12 +445,12 @@ code {
     font-size: 14px;
     border-radius: 25px;
     padding: 8px 4px;
-    transition: 0.3s;
+    transition: all 0.3s ease-in-out;
 
     &:hover {
       background-color: #8ff129 !important;
       color: white;
-      transition: 0.3s;
+      transition: all 0.3s ease-in-out;
 
       .sidebar-assets-icon {
         transform: rotate(45deg);
@@ -462,10 +477,6 @@ code {
   }
 
   @media screen and (max-width: 1240px) {
-    .offcanvas-backdrop.active {
-      opacity: 0.5;
-    }
-
     &__sidebar {
       @include padding(10px, 10px, 15px, 10px);
       position: fixed;
@@ -475,6 +486,18 @@ code {
       width: 282px;
       height: 100vh;
       z-index: 1050;
+      transition: all 0.3s ease-in-out;
+    }
+
+    &__offcanvasSidebar {
+      position: fixed;
+      top: 0;
+      left: -100%;
+      width: 100vw;
+      height: 100vh;
+      background-color: #000;
+      opacity: 0.5;
+      z-index: 100;
       transition: all 0.3s ease-in-out;
     }
 
@@ -500,11 +523,23 @@ code {
     &__sidebar.active {
       left: 0;
     }
+
+    &__offcanvasSidebar.active {
+      left: 0;
+    }
   }
 
   @media screen and (max-width: 540px) {
     &__sidebar.active {
       width: 100%;
+    }
+
+    &__sidebar-badge {
+      font-size: 12px;
+
+      & svg {
+        font-size: 14px;
+      }
     }
   }
 
@@ -583,6 +618,8 @@ code {
   }
 
   &__home-card-table-data-icon {
+    display: flex;
+    align-items: center;
     background-color: #103351;
     padding: 0 5px;
     border-radius: 5px;
@@ -590,6 +627,11 @@ code {
 
     & svg {
       color: white;
+    }
+
+    & svg:not(:first-child) {
+      width: 100%;
+      height: 100%;
     }
   }
 
@@ -758,10 +800,30 @@ code {
   @media screen and (max-width: 300px) {
     &__home-container {
       height: calc(100vh - 104px);
+
+      .container {
+        @include padding(16px, 12px, 20px, 12px);
+      }
+
+      &::-webkit-scrollbar {
+        width: 8px;
+      }
     }
 
-    & .container {
-      @include padding(20px, 12px, 20px, 12px);
+    &__home-cards {
+      & h4 {
+        font-size: 16px;
+      }
+    }
+
+    &__home-card {
+      & h5 {
+        font-size: 14px;
+      }
+
+      & h6 {
+        font-size: 12px;
+      }
     }
 
     &__home-stories-card-img {
@@ -778,8 +840,14 @@ code {
       }
     }
 
-    .table {
-      font-size: 14px;
+    &__home-table {
+      & thead {
+        font-size: 14px;
+      }
+
+      & tbody {
+        font-size: 12px;
+      }
     }
 
     &__home-stories-card-body p {
@@ -851,7 +919,7 @@ code {
       @include display-justify-properities(space-between);
 
       & div h6 {
-        @include margin(0, 24px, 0, 0);
+        @include margin(0, 0, 0, 0);
       }
 
       & div p {
@@ -999,6 +1067,24 @@ code {
       margin-bottom: 10px;
     }
 
+    &__dashboard-assets-card-body {
+      & .top-section {
+        & div h6 {
+          font-size: 14px;
+        }
+
+        & div p {
+          font-size: 12px;
+        }
+      }
+
+      & .bottom-section {
+        & p {
+          font-size: 12px;
+        }
+      }
+    }
+
     &__dashboard-assets-performance-header {
       flex-wrap: wrap;
 
@@ -1006,11 +1092,12 @@ code {
         font-size: 12px;
       }
 
-      & .table {
-        & tr {
+      &__dashboard-table {
+        & thead {
           font-size: 14px;
         }
-        & td {
+
+        & tbody {
           font-size: 12px;
         }
       }
@@ -1025,7 +1112,7 @@ code {
     }
 
     h4 {
-      font-size: 18px;
+      font-size: 16px;
     }
 
     &__dashboard-assets-invite-img {
@@ -1042,6 +1129,27 @@ code {
       flex-direction: column;
       & p {
         font-size: 10px;
+      }
+    }
+
+    &__dashboard-portifolio-content-left {
+      margin-left: 0;
+    }
+
+    &__dashboard-assets-invite {
+      & h5 {
+        font-size: 16px;
+      }
+
+      & h6 {
+        font-size: 14px;
+      }
+    }
+
+    &__dashboard-assets-invite-email {
+      & ::placeholder,
+      button {
+        font-size: 12px;
       }
     }
   }
@@ -1083,42 +1191,39 @@ code {
   &__leaderboards-table {
     border: 1px solid #0000000f;
     border-collapse: collapse;
-    border-radius: 20px;
-    border-style: hidden;
     box-shadow: 0 0 0 1px #0000000f;
 
-    & tr {
-      font-size: 14px;
+    & thead {
       white-space: nowrap;
     }
   }
 
   @media screen and (max-width: 768px) {
     &__leaderboards-section {
-      & .container h5,
+      & .container h4,
       & .container form .row {
         font-size: 18px;
         margin-bottom: 16px;
-      }
-    }
-
-    &__leaderboards-table {
-      & tr {
-        font-size: 14px;
       }
     }
   }
 
   @media screen and (max-width: 320px) {
     &__leaderboards-section {
-      & .container h5,
+      & .container h4,
       & .container form .row {
         font-size: 16px;
         margin-bottom: 12px;
+      }
+    }
 
-        & div:first-child {
-          margin-bottom: 10px;
-        }
+    &__leaderboards-table {
+      & thead {
+        font-size: 14px;
+      }
+
+      & tbody {
+        font-size: 12px;
       }
     }
   }
@@ -1192,26 +1297,26 @@ code {
     color: white;
     border-radius: 40px;
     border: 1px solid #8ff129;
-    transition: 0.3s;
+    transition: all 0.3s ease-in-out;
 
     &:hover {
       background-color: white !important;
       color: #8ff129;
       border: 1px solid #0000001a;
-      transition: 0.3s;
+      transition: all 0.3s ease-in-out;
     }
   }
 
   &__community-accordion-top {
     @include display-align-properities(center);
 
-    & div h6 {
-      font-size: 12px;
+    & div h5 {
+      font-size: 14px;
       @include margin(0, 0, 1px, 0);
     }
 
     & div p {
-      font-size: 10px;
+      font-size: 12px;
       color: #a4a4a4;
       @include margin(0, 0, 0, 0);
     }
@@ -1451,7 +1556,7 @@ code {
     }
 
     &__community-right-trending-card-content {
-      &--data h6 {
+      &--data h5 {
         font-size: 14px;
       }
 
@@ -1508,7 +1613,7 @@ code {
       height: calc(100vh - 204px);
 
       & .container {
-        @include padding(20px, 12px, 20px, 12px);
+        @include padding(16px, 12px, 20px, 12px);
       }
     }
 
@@ -1532,7 +1637,9 @@ code {
 
     &__community-input {
       @include margin(0, 0, 10px, 0);
-      font-size: 14px;
+      &::placeholder {
+        font-size: 14px;
+      }
     }
 
     &__community-btn {
@@ -1552,7 +1659,7 @@ code {
     }
 
     &__community-accordion-post-card ~ p {
-      font-size: 10px;
+      font-size: 12px;
     }
 
     .carousel-control-prev,
@@ -1566,6 +1673,24 @@ code {
       & [data-bs-target] {
         width: 8px;
         height: 8px;
+      }
+    }
+
+    &__community-right-info-card--top {
+      & h5 {
+        font-size: 14px;
+        margin-bottom: 2px;
+      }
+    }
+
+    &__community-right-trending-card-header {
+      margin-bottom: 0;
+      h5 {
+        font-size: 16px;
+      }
+
+      h6 {
+        font-size: 14px;
       }
     }
   }
@@ -1703,7 +1828,7 @@ code {
         height: 14px;
         background: grey;
         border-radius: 20px;
-        transition: 0.3s;
+        transition: all 0.3s ease-in-out;
       }
     }
 
@@ -1770,81 +1895,11 @@ code {
     box-shadow: 0 0 5px #0000000f;
   }
 
-  @media screen and (max-width: 940px) {
-    &__tools-filter,
-    &__browse-filter {
-      margin-bottom: 20px;
-
-      & .row {
-        gap: 10px;
-      }
-    }
-
-    &__leaderboards-input {
-      margin-bottom: 10px;
-    }
-
-    &__tools-platform-btns {
-      margin-right: 10px;
-    }
-
-    &__tools-filter-criteria {
-      & div {
-        grid-template-columns: repeat(4, 1fr);
-      }
-    }
-  }
-
-  @media screen and (max-width: 768px) {
-    &__tools-container .container,
-    &__browse-container .container {
-      @include padding(24px, 12px, 24px, 12px);
-    }
-
-    &__tools-filter-criteria {
-      & div {
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-
-    &__tools-tab,
-    &_browse-tab {
-      padding: 20px 12px 0 12px;
-      justify-content: space-between;
-    }
-
-    & .nav-item {
-      width: auto;
-    }
-  }
-
-  @media screen and (max-width: 700px) {
-    &__tools-container,
-    &__browse-container {
-      height: calc(100vh - 136px);
-    }
-
-    &__tools-filter-criteria {
-      & div {
-        grid-template-columns: repeat(2, 1fr);
-      }
-    }
-
-    &__tools-tab,
-    &_browse-tab {
-      justify-content: normal;
-      flex-wrap: nowrap;
-      width: 100%;
-      overflow-y: hidden;
-      overflow-x: auto;
-    }
-
-    &__tools-tab::-webkit-scrollbar {
-      height: 4px;
-    }
-  }
-
   // Browse
+
+  &__browse {
+    width: 100%;
+  }
 
   &__browse-container {
     & form .row .col {
@@ -1860,13 +1915,14 @@ code {
 
     & form .row .col:last-child {
       @include display-align-properities(center);
+      white-space: nowrap;
     }
 
     & .row .col-7 h6 {
       font-size: 14px;
       font-weight: normal;
       color: #a4a4a4;
-      margin: 4px 0 12px 0;
+      margin: 0 0 12px 0;
     }
   }
 
@@ -1876,6 +1932,16 @@ code {
     & .nav-item {
       width: calc(100% / 6);
     }
+  }
+
+  &__leaderboards-select-btn {
+    select {
+      border: 0;
+    }
+  }
+
+  &__leaderboards-toggle-btn {
+    @include display-align-properities(center);
   }
 
   &__browse-cards {
@@ -1915,11 +1981,11 @@ code {
       margin: 0 0 8px 0;
     }
   }
+
   &__browse-cards-icon {
     display: flex;
 
     & div {
-      height: 15px;
       margin-right: 4px;
 
       & img {
@@ -1945,6 +2011,228 @@ code {
       vertical-align: baseline;
       font-size: 12px;
       margin-right: 4px;
+    }
+  }
+
+  &__browse-rarity-section {
+    margin-bottom: 0 !important;
+    & h6 {
+      margin: 0;
+      color: gray;
+      font-size: 14px;
+    }
+
+    & div {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+  }
+
+  @media screen and (max-width: 1000px) {
+    &__tools-filter,
+    &__browse-filter {
+      margin-bottom: 20px;
+    }
+
+    &__leaderboards-input {
+      margin-bottom: 10px;
+    }
+
+    &__tools-platform-btns {
+      margin-right: 10px;
+    }
+
+    &__tools-filter-criteria {
+      & div {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    &__browse-cards {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    &__tools-container .container,
+    &__browse-container .container {
+      @include padding(24px, 12px, 24px, 12px);
+    }
+
+    &__tools-filter-criteria {
+      & div {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    &__tools-tab,
+    &__browse-tab {
+      padding: 20px 12px 0 12px;
+      justify-content: space-between;
+    }
+
+    & .nav-item {
+      width: auto;
+    }
+  }
+
+  @media screen and (max-width: 700px) {
+    &__tools-container,
+    &__browse-container {
+      height: calc(100vh - 132px);
+    }
+
+    &__tools-filter-criteria {
+      & div {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    &__tools-tab,
+    &__browse-tab {
+      justify-content: normal;
+      flex-wrap: nowrap;
+      width: 100%;
+      overflow-y: hidden;
+      overflow-x: auto;
+
+      &::-webkit-scrollbar {
+        height: 5px;
+      }
+
+      & .nav-item .nav-link.active {
+        border: 1px solid #8ff129;
+        border-bottom: none;
+      }
+    }
+
+    &__tools-platform-btns {
+      margin-right: 0;
+    }
+
+    &__browse-cards {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    &__leaderboards-select-btn {
+      select {
+        font-size: 13px;
+      }
+    }
+
+    &__leaderboards-toggle-btn {
+      font-size: 13px;
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    &__tools-container,
+    &__browse-container {
+      height: calc(100vh - 158px);
+
+      & .container {
+        @include padding(16px, 12px, 20px, 12px);
+      }
+
+      &::-webkit-scrollbar {
+        width: 6px;
+      }
+    }
+
+    &__tools-tab,
+    &__browse-tab {
+      @include padding(12px, 12px, 0, 12px);
+      font-size: 14px;
+
+      & .nav-item .nav-link.active {
+        @include padding(8px, 8px, 8px, 8px);
+      }
+
+      &::-webkit-scrollbar {
+        height: 4px;
+      }
+    }
+
+    &__leaderboards-input,
+    &__tools-platform-btn {
+      font-size: 12px;
+    }
+
+    &__tools-filter,
+    &__browse-filter {
+      & div h6,
+      & label {
+        font-size: 13px;
+      }
+    }
+
+    &__tools-filter-criteria {
+      & div {
+        display: flex;
+        flex-wrap: wrap;
+      }
+    }
+
+    &__tools-table {
+      & thead {
+        font-size: 14px;
+      }
+
+      & tbody {
+        font-size: 12px;
+      }
+    }
+
+    &__tools-filter,
+    &__browse-filter {
+      @include padding(12px, 12px, 12px, 12px);
+    }
+  }
+
+  @media screen and (max-width: 320px) {
+    &__tools-container,
+    &__browse-container {
+      height: calc(100vh - 158px);
+    }
+
+    &__tools-platform-btns {
+      margin-right: 0;
+    }
+
+    &__browse-cards {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    &__leaderboards-select-btn {
+      select {
+        font-size: 12px;
+      }
+    }
+
+    &__leaderboards-toggle-btn,
+    &__browse-cards-icon p,
+    &__browse-cards-bottom-content p,
+    &__browse-cards-bottom-content button {
+      font-size: 12px;
+    }
+
+    &__browse-cards-top-content {
+      & div h6 {
+        font-size: 14px;
+      }
+    }
+
+    &__browse-rarity-section {
+      & h6 {
+        font-size: 13px;
+      }
+
+      & div {
+        justify-content: flex-start;
+      }
     }
   }
 }

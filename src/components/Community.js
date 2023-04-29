@@ -69,7 +69,7 @@ const Community = () => {
                               <img src={item.img} alt={item.name} />
                             </div>
                             <div>
-                              <h6>{item.name}</h6>
+                              <h5>{item.name}</h5>
                               <p>{item.location}</p>
                             </div>
                           </div>
@@ -117,7 +117,7 @@ const Community = () => {
                               <img src={item.img} alt={item.name} />
                             </div>
                             <div>
-                              <h6>{item.name}</h6>
+                              <h5>{item.name}</h5>
                               <p>{item.mail}</p>
                             </div>
                           </div>
@@ -154,7 +154,7 @@ const Community = () => {
                     >
                       <Card.Body>
                         <div className="app__community-right-trending-card-header">
-                          <h6>{items.title}</h6>
+                          <h5>{items.title}</h5>
                           <p>{items.btn}</p>
                         </div>
                         {items.data.map((item) => {

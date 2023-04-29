@@ -913,6 +913,57 @@ const browseData = [
   {
     tabName: "Virtual Land",
     tabId: "virtualLand",
+    browseTabData: [
+      {
+        searchName: "Search Any",
+        firstBtnName: "RECENTLY CLOSED",
+        secondBtnName: "ON SALE",
+        filterData: [
+          {
+            labelName: "COLLECTION",
+            option: "All Collection",
+          },
+          {
+            labelName: "PRICE RANGE",
+            option: "$0 - $15,000,000",
+          },
+          {
+            labelName: "LOCATION",
+            option: "International",
+          },
+          {
+            labelName: "CURRENCY",
+            option: "Ethereum",
+          },
+          {
+            labelName: "CATEGORIES",
+            option: "Estates",
+          },
+        ],
+        boxDataName: "RARITY",
+        rarityData: [
+          {
+            name: "Common",
+          },
+          {
+            name: "Uncommon",
+          },
+          {
+            name: "Rare",
+          },
+          {
+            name: "Epic",
+          },
+          {
+            name: "Legendary",
+          },
+          {
+            name: "Mythic",
+          },
+          { name: "Unique" },
+        ],
+      },
+    ],
     browseCardData: [
       {
         cardId: "card1",
@@ -983,6 +1034,57 @@ const browseData = [
   {
     tabName: "Crowdfunding",
     tabId: "crowdFunding",
+    browseTabData: [
+      {
+        searchName: "Search Any",
+        firstBtnName: "RECENTLY CLOSED",
+        secondBtnName: "ON SALE",
+        filterData: [
+          {
+            labelName: "COLLECTION",
+            option: "All Collection",
+          },
+          {
+            labelName: "PRICE RANGE",
+            option: "$0 - $15,000,000",
+          },
+          {
+            labelName: "LOCATION",
+            option: "International",
+          },
+          {
+            labelName: "CURRENCY",
+            option: "Ethereum",
+          },
+          {
+            labelName: "CATEGORIES",
+            option: "Estates",
+          },
+        ],
+        boxDataName: "RARITY",
+        rarityData: [
+          {
+            name: "Common",
+          },
+          {
+            name: "Uncommon",
+          },
+          {
+            name: "Rare",
+          },
+          {
+            name: "Epic",
+          },
+          {
+            name: "Legendary",
+          },
+          {
+            name: "Mythic",
+          },
+          { name: "Unique" },
+        ],
+      },
+    ],
     browseCardData: [
       {
         cardId: "card9",
@@ -1053,6 +1155,57 @@ const browseData = [
   {
     tabName: "NFTS",
     tabId: "nfts",
+    browseTabData: [
+      {
+        searchName: "Search Any",
+        firstBtnName: "RECENTLY CLOSED",
+        secondBtnName: "ON SALE",
+        filterData: [
+          {
+            labelName: "COLLECTION",
+            option: "All Collection",
+          },
+          {
+            labelName: "PRICE RANGE",
+            option: "$0 - $15,000,000",
+          },
+          {
+            labelName: "LOCATION",
+            option: "International",
+          },
+          {
+            labelName: "CURRENCY",
+            option: "Ethereum",
+          },
+          {
+            labelName: "CATEGORIES",
+            option: "Estates",
+          },
+        ],
+        boxDataName: "RARITY",
+        rarityData: [
+          {
+            name: "Common",
+          },
+          {
+            name: "Uncommon",
+          },
+          {
+            name: "Rare",
+          },
+          {
+            name: "Epic",
+          },
+          {
+            name: "Legendary",
+          },
+          {
+            name: "Mythic",
+          },
+          { name: "Unique" },
+        ],
+      },
+    ],
     browseCardData: [
       {
         cardId: "card17",
@@ -1123,6 +1276,57 @@ const browseData = [
   {
     tabName: "Tokenization",
     tabId: "tokeniZation",
+    browseTabData: [
+      {
+        searchName: "Search Any",
+        firstBtnName: "RECENTLY CLOSED",
+        secondBtnName: "ON SALE",
+        filterData: [
+          {
+            labelName: "COLLECTION",
+            option: "All Collection",
+          },
+          {
+            labelName: "PRICE RANGE",
+            option: "$0 - $15,000,000",
+          },
+          {
+            labelName: "LOCATION",
+            option: "International",
+          },
+          {
+            labelName: "CURRENCY",
+            option: "Ethereum",
+          },
+          {
+            labelName: "CATEGORIES",
+            option: "Estates",
+          },
+        ],
+        boxDataName: "RARITY",
+        rarityData: [
+          {
+            name: "Common",
+          },
+          {
+            name: "Uncommon",
+          },
+          {
+            name: "Rare",
+          },
+          {
+            name: "Epic",
+          },
+          {
+            name: "Legendary",
+          },
+          {
+            name: "Mythic",
+          },
+          { name: "Unique" },
+        ],
+      },
+    ],
     browseCardData: [
       {
         cardId: "card25",
@@ -1193,6 +1397,57 @@ const browseData = [
   {
     tabName: "Hybrid Link",
     tabId: "hybridLink",
+    browseTabData: [
+      {
+        searchName: "Search Any",
+        firstBtnName: "RECENTLY CLOSED",
+        secondBtnName: "ON SALE",
+        filterData: [
+          {
+            labelName: "COLLECTION",
+            option: "All Collection",
+          },
+          {
+            labelName: "PRICE RANGE",
+            option: "$0 - $15,000,000",
+          },
+          {
+            labelName: "LOCATION",
+            option: "International",
+          },
+          {
+            labelName: "CURRENCY",
+            option: "Ethereum",
+          },
+          {
+            labelName: "CATEGORIES",
+            option: "Estates",
+          },
+        ],
+        boxDataName: "RARITY",
+        rarityData: [
+          {
+            name: "Common",
+          },
+          {
+            name: "Uncommon",
+          },
+          {
+            name: "Rare",
+          },
+          {
+            name: "Epic",
+          },
+          {
+            name: "Legendary",
+          },
+          {
+            name: "Mythic",
+          },
+          { name: "Unique" },
+        ],
+      },
+    ],
     browseCardData: [
       {
         cardId: "card33",
@@ -1263,6 +1518,57 @@ const browseData = [
   {
     tabName: "My Store",
     tabId: "myStore",
+    browseTabData: [
+      {
+        searchName: "Search Any",
+        firstBtnName: "RECENTLY CLOSED",
+        secondBtnName: "ON SALE",
+        filterData: [
+          {
+            labelName: "COLLECTION",
+            option: "All Collection",
+          },
+          {
+            labelName: "PRICE RANGE",
+            option: "$0 - $15,000,000",
+          },
+          {
+            labelName: "LOCATION",
+            option: "International",
+          },
+          {
+            labelName: "CURRENCY",
+            option: "Ethereum",
+          },
+          {
+            labelName: "CATEGORIES",
+            option: "Estates",
+          },
+        ],
+        boxDataName: "RARITY",
+        rarityData: [
+          {
+            name: "Common",
+          },
+          {
+            name: "Uncommon",
+          },
+          {
+            name: "Rare",
+          },
+          {
+            name: "Epic",
+          },
+          {
+            name: "Legendary",
+          },
+          {
+            name: "Mythic",
+          },
+          { name: "Unique" },
+        ],
+      },
+    ],
     browseCardData: [
       {
         cardId: "card41",

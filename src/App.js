@@ -50,7 +50,7 @@ const App = () => {
     { id: "s3", name: "Guides & Tutorials" },
     { id: "s4", name: "Help" },
   ]);
-  const [hell, setHell] = useState(true);
+  const [hell, setHell] = useState(false);
 
   const changeSidebarTabs = (tabName) => {
     sideBarData.map((item) => {

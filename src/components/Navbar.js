@@ -134,7 +134,7 @@ const Navbar = () => {
               </Link>
               <div
                 className="app__navbar-search-block"
-                style={{ display: `${showSearchBar ? "none" : "block"}` }}
+                style={{ display: `${showSearchBar ? "none" : ""}` }}
               >
                 <form className="form-inline">
                   <div className="input-group input-group-sm">
@@ -145,7 +145,7 @@ const Navbar = () => {
                       aria-label="Search"
                     />
                     <div className="input-group-append">
-                      <button className="btn btn-navbar" type="submit">
+                      <button className="btn btn-navbar" type="button">
                         <BsSearch />
                       </button>
                       <button

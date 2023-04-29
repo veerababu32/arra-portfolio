@@ -20,7 +20,7 @@ const Home = () => {
                         <h6>{item.subName}</h6>
                       </div>
                       <div className="card-bottom">
-                        <Table hover borderless>
+                        <Table hover borderless className="app__home-table">
                           <thead>
                             <tr>
                               <th>{item.tableTitleOne}</th>

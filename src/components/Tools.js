@@ -113,7 +113,7 @@ const Tools = () => {
                       <Container key={tabData.searchName}>
                         <form>
                           <Row>
-                            <Col lg={7}>
+                            <Col md={12} lg={8}>
                               <input
                                 type="search"
                                 className="form-control app__leaderboards-input"
@@ -121,8 +121,10 @@ const Tools = () => {
                               />
                             </Col>
                             <Col
-                              xs={3}
+                              xs={6}
+                              sm={3}
                               md={2}
+                              lg={2}
                               className="app__tools-platform-btns"
                             >
                               <button className="app__tools-platform-btn">
@@ -130,7 +132,7 @@ const Tools = () => {
                                 {tabData.firstBtnName}
                               </button>
                             </Col>
-                            <Col xs={3} md={2}>
+                            <Col xs={6} sm={3} md={2} lg={2}>
                               <button className="app__tools-platform-btn">
                                 <AiOutlinePlus />
                                 {tabData.secondBtnName}

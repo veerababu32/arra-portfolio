@@ -8,7 +8,7 @@ const Leaderboards = () => {
     <Layout>
       <div className="app__home-container app__leaderboards-section">
         <Container>
-          <h5>Leaderboards</h5>
+          <h4>Leaderboards</h4>
           <form>
             <Row>
               <Col xs={12} sm={8} lg={10}>
@@ -35,23 +35,17 @@ const Leaderboards = () => {
                   className="app__leaderboards-table-section"
                   key={items.title}
                 >
-                  <h5>{items.title}</h5>
+                  <h4>{items.title}</h4>
                   {
                     <Table hover responsive className="app__leaderboards-table">
                       <thead>
                         <tr
                           style={{
                             backgroundColor: `${items.bgColor}`,
-                            borderTopLeftRadius: "20px",
-                            borderTopRightRadius: "20px",
                             color: `${items.color}`,
                           }}
                         >
-                          <th
-                            style={{
-                              borderTopLeftRadius: "20px",
-                            }}
-                          ></th>
+                          <th></th>
                           <th>WORLD</th>
                           <th>MARKET CAP</th>
                           <th>FLOOR</th>
@@ -59,13 +53,7 @@ const Leaderboards = () => {
                           <th>1D %</th>
                           <th>7D VOL</th>
                           <th>7D %</th>
-                          <th
-                            style={{
-                              borderTopRightRadius: "20px",
-                            }}
-                          >
-                            OWNERS
-                          </th>
+                          <th>OWNERS</th>
                         </tr>
                       </thead>
                       <tbody>
