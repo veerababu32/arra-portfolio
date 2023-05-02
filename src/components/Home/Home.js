@@ -1,7 +1,8 @@
 import { Card, Col, Container, Row, Table } from "react-bootstrap";
 import { BsMeta, BsThreeDotsVertical } from "react-icons/bs";
-import { homeCardsData, homeTopStoriesData } from "../constants/data";
-import Layout from "./Layout";
+import { homeCardsData, homeTopStoriesData } from "../../constants/data";
+import Layout from "../Layout/Layout";
+import "./Home.scss";
 
 const Home = () => {
   return (

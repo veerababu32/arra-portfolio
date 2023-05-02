@@ -1,9 +1,9 @@
 %navbar-right-icons {
-  color: black;
+  color: black !important;
   border-radius: 50%;
-  border: 1px solid black;
+  border: 1px solid black !important;
   padding: 8px !important;
-  display: flex;
+  display: flex !important;
   align-items: center;
   transition: 0.3s;
 
@@ -22,4 +22,67 @@
   border-radius: 20px;
   border-top-left-radius: 0;
   border-top-right-radius: 0;
+}
+
+%app-tools-browse-tabs {
+  @include padding(20px, 20px, 0, 20px);
+
+  & .nav-item {
+    width: calc(100% / 3);
+    white-space: nowrap;
+
+    & .nav-link {
+      color: #a4a4a4;
+
+      &:hover {
+        border-color: transparent;
+        color: black;
+      }
+
+      &.active {
+        color: black;
+        border-color: transparent;
+        border-bottom: 4px solid #8ff129;
+      }
+    }
+  }
+}
+
+%app-tools-browse-filter {
+  @include padding(20px, 20px, 20px, 20px);
+  background-color: #d3d3d345;
+  border-radius: 10px;
+  margin-bottom: 40px;
+
+  & .row {
+    margin-bottom: 16px;
+    gap: 10px;
+  }
+
+  & label {
+    color: gray;
+    font-size: 14px;
+    white-space: nowrap;
+  }
+
+  & select {
+    background-color: transparent;
+    color: gray;
+    font-size: 12px;
+  }
+
+  & div h6 {
+    color: gray;
+  }
+
+  & div button {
+    @include display-align-properities(center);
+    @include padding(4px, 10px, 4px, 10px);
+    background-color: #a9a9a969;
+    border-radius: 50px;
+    border: 0;
+    font-size: 12px;
+    color: gray;
+    white-space: nowrap;
+  }
 }

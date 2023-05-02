@@ -5,10 +5,11 @@ import {
   dashboardYourAssets,
   dashboardPerformanceTable,
   dashboardInviteData,
-} from "../constants/data";
-import Layout from "./Layout";
-import MyChart from "./MyChart";
+} from "../../constants/data";
+import Layout from "../Layout/Layout";
+import MyChart from "../HighChart/MyChart";
 import { Link } from "react-router-dom";
+import "./Dashboard.scss";
 
 const Dashboard = () => {
   return (

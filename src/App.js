@@ -1,10 +1,10 @@
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
-import Home from "./components/Home";
-import Dashboard from "./components/Dashboard";
-import Leaderboards from "./components/Leaderboards";
-import Community from "./components/Community";
-import Tools from "./components/Tools";
-import Browse from "./components/Browse";
+import Home from "./components/Home/Home";
+import Dashboard from "./components/Dashboard/Dashboard";
+import Leaderboards from "./components/Leaderboards/Leaderboards";
+import Community from "./components/Community/Community";
+import Tools from "./components/Tools/Tools";
+import Browse from "./components/Browse/Browse";
 import ErrorPage from "./ErrorPage.js";
 import AppContext from "./store/AppContext";
 import { sideBarData } from "./constants/data";

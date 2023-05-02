@@ -1,7 +1,8 @@
 import { Link } from "react-router-dom";
 import { RiCloseLine, RiVipDiamondLine } from "react-icons/ri";
 import { useContext, useRef, useState } from "react";
-import AppContext from "../store/AppContext";
+import AppContext from "../../store/AppContext";
+import "./Sidebar.scss";
 
 const Sidebar = () => {
   const { tabs, toggleSidebar, toggleSidebarFun } = useContext(AppContext);
@@ -37,7 +38,7 @@ const Sidebar = () => {
                 key={item.id}
                 to={"#"}
                 onClick={() => activeTabHandler(item.id)}
-                className={`nav-link app__sidebar-badge ${
+                className={`app__sidebar-badge ${
                   isTabActive === item.id ? "active" : ""
                 }`}
               >

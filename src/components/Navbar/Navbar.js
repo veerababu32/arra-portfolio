@@ -5,10 +5,11 @@ import { AiOutlineUser, AiOutlineClose, AiOutlineDown } from "react-icons/ai";
 import { FaBars, FaFile, FaUsers } from "react-icons/fa";
 import { CiLogout } from "react-icons/ci";
 import { NavLink, Link } from "react-router-dom";
-import { navbarTabs } from "../constants/data";
-import Logo from "../assets/images/logo.svg";
+import { navbarTabs } from "../../constants/data";
+import Logo from "../../assets/images/logo.svg";
 import { useContext, useEffect, useState, useRef } from "react";
-import AppContext from "../store/AppContext";
+import AppContext from "../../store/AppContext";
+import "./Navbar.scss";
 
 const Navbar = () => {
   const appCtx = useContext(AppContext);
@@ -89,7 +90,7 @@ const Navbar = () => {
                   return (
                     <NavLink
                       to={`/${item.link}`}
-                      className="nav-link app__navbar-badges-left"
+                      className="app__navbar-badges-left"
                       key={item.tabId}
                       onClick={() => {
                         tabHandler(item.name);
@@ -103,7 +104,7 @@ const Navbar = () => {
               </div>
               <div>
                 <Link
-                  className="nav-link app__navbar-badges-right"
+                  className="app__navbar-badges-right"
                   to={"#"}
                   id="buySell"
                   onClick={moretabsHandler}
@@ -111,7 +112,7 @@ const Navbar = () => {
                   Buy/Sell
                 </Link>
                 <Link
-                  className="nav-link app__navbar-badges-right"
+                  className="app__navbar-badges-right"
                   to={"#"}
                   id="myStore"
                   onClick={moretabsHandler}
@@ -124,7 +125,7 @@ const Navbar = () => {
           <Nav className="navbar-nav app__navbar-right-section">
             <div className="nav-item">
               <Link
-                className="nav-link app__navbar-search-icon"
+                className="app__navbar-search-icon"
                 to={"#"}
                 onClick={() => {
                   handleSearchBar(false);
@@ -168,7 +169,7 @@ const Navbar = () => {
               ref={notificationRef}
             >
               <Link
-                className="nav-link app__navbar-notification-icon"
+                className="app__navbar-notification-icon"
                 data-toggle="dropdown"
                 to={"#"}
                 aria-expanded={showNotification ? "false" : "true"}
@@ -212,7 +213,7 @@ const Navbar = () => {
               ref={userRef}
             >
               <Link
-                className="nav-link app__navbar-user-icon"
+                className="app__navbar-user-icon"
                 data-toggle="dropdown"
                 to={"#"}
                 aria-expanded={showUser ? "false" : "true"}

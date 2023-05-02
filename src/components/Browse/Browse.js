@@ -1,8 +1,9 @@
 import { Card, Col, Container, Row } from "react-bootstrap";
 import { MdLocationOn } from "react-icons/md";
-import { browseData } from "../constants/data";
-import hexagonIcon from "../assets/images/hexagon-icon.png";
-import Layout from "./Layout";
+import { browseData } from "../../constants/data";
+import hexagonIcon from "../../assets/images/hexagon-icon.png";
+import Layout from "../Layout/Layout";
+import "./Browse.scss";
 
 const Browse = () => {
   return (

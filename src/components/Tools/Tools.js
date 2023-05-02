@@ -1,10 +1,11 @@
 import { Col, Container, Row, Table } from "react-bootstrap";
 import { AiOutlinePlus } from "react-icons/ai";
-import { toolsTabsData, toolsTableData } from "../constants/data";
-import Layout from "./Layout";
+import { toolsTabsData, toolsTableData } from "../../constants/data";
+import Layout from "../Layout/Layout";
 import { Bar } from "react-chartjs-2";
 import "chart.js/auto";
 import { useState } from "react";
+import "./Tools.scss";
 
 const Tools = () => {
   const [checkboxValues, setCheckboxValues] = useState({

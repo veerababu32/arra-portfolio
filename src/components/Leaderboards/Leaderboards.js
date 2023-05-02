@@ -1,7 +1,8 @@
 import { Col, Container, Row, Table } from "react-bootstrap";
 import { BsMeta } from "react-icons/bs";
-import { leaderboardsTableData } from "../constants/data";
-import Layout from "./Layout";
+import { leaderboardsTableData } from "../../constants/data";
+import Layout from "../Layout/Layout";
+import "./Leaderboards.scss";
 
 const Leaderboards = () => {
   return (

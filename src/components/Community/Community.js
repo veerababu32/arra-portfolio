@@ -12,9 +12,9 @@ import {
   communityDanielInfo,
   communityTrendingData,
   communityDanielAccordian,
-} from "../constants/data";
+} from "../../constants/data";
 import { BsHeart, BsChat, BsSend, BsBookmark } from "react-icons/bs";
-import Layout from "./Layout";
+import Layout from "../Layout/Layout";
 
 const Community = () => {
   const [index, setIndex] = useState(0);

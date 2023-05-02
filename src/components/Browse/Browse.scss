@@ -1,0 +1,371 @@
+@import "../../scss/_helpers";
+
+.app {
+  &__browse {
+    width: 100%;
+  }
+
+  &__browse-container {
+    height: calc(100vh - 131px);
+    overflow-y: scroll;
+
+    & .container {
+      @include padding(24px, 24px, 24px, 24px);
+
+      & form .row {
+        @include margin(0, 0, 16px, 0);
+        align-items: center;
+      }
+
+      & form .row .col {
+        color: #a4a4a4;
+        border: none;
+
+        & select {
+          width: auto;
+          color: #a4a4a4;
+          border: none;
+        }
+      }
+
+      & form .row .col:last-child {
+        @include display-align-properities(center);
+        white-space: nowrap;
+      }
+
+      & .row .col-7 h6 {
+        font-size: 14px;
+        font-weight: normal;
+        color: #a4a4a4;
+        margin: 0 0 12px 0;
+      }
+    }
+  }
+
+  &__browse-tab {
+    @extend %app-tools-browse-tabs;
+
+    & .nav-item {
+      width: calc(100% / 6);
+    }
+  }
+
+  &__leaderboards-select-btn {
+    select {
+      border: 0;
+    }
+  }
+
+  &__leaderboards-toggle-btn {
+    @include display-align-properities(center);
+  }
+
+  &__browse-filter {
+    @extend %app-tools-browse-filter;
+  }
+
+  &__browse-cards {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+
+    & .card {
+      border-radius: 20px;
+
+      & .card-header {
+        padding: 0;
+        overflow: hidden;
+        cursor: pointer;
+
+        & .card-img {
+          width: 100%;
+          height: 100%;
+          transition: all 0.3s ease-in-out;
+
+          &:hover {
+            transform: scale(1.2);
+            transition: all 0.3s ease-in-out;
+          }
+        }
+      }
+
+      & .card-body {
+        padding: 8px 12px 10px 12px;
+      }
+    }
+  }
+
+  &__browse-cards-top-content {
+    @include direction-justitfy-align-properities(row, space-between, center);
+    margin-bottom: 4px;
+
+    & div h6 {
+      margin: 0;
+    }
+  }
+
+  &__browse-cards-bottom-content {
+    & p {
+      margin: 0 0 8px 0;
+    }
+  }
+
+  &__browse-cards-icon {
+    display: flex;
+    align-items: center;
+
+    & div {
+      display: flex;
+      height: 16px;
+      margin-right: 4px;
+
+      & img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+
+    & p {
+      margin: 0;
+    }
+  }
+
+  &__browse-cards-btn {
+    @include display-align-properities(center);
+    border: none;
+    border-radius: 5px;
+    color: #a4a4a4;
+    font-size: 12px;
+    padding: 4px 6px;
+
+    & svg {
+      vertical-align: baseline;
+      font-size: 12px;
+      margin-right: 4px;
+    }
+  }
+
+  &__browse-rarity-section {
+    margin-bottom: 0 !important;
+    & h6 {
+      margin: 0;
+      color: gray;
+      font-size: 14px;
+    }
+
+    & div {
+      display: flex;
+      justify-content: space-between;
+      flex-wrap: wrap;
+      gap: 10px;
+    }
+  }
+
+  @media screen and (max-width: 1000px) {
+    &__tools-filter,
+    &__browse-filter {
+      margin-bottom: 20px;
+    }
+
+    &__leaderboards-input {
+      margin-bottom: 10px;
+    }
+
+    &__tools-platform-btns {
+      margin-right: 10px;
+    }
+
+    &__tools-filter-criteria {
+      & div {
+        grid-template-columns: repeat(4, 1fr);
+      }
+    }
+
+    &__browse-cards {
+      grid-template-columns: repeat(3, 1fr);
+      gap: 10px;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    &__tools-container .container,
+    &__browse-container .container {
+      @include padding(24px, 12px, 24px, 12px);
+    }
+
+    &__tools-filter-criteria {
+      & div {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    &__tools-tab,
+    &__browse-tab {
+      padding: 20px 12px 0 12px;
+      justify-content: space-between;
+    }
+
+    & .nav-item {
+      width: auto;
+    }
+  }
+
+  @media screen and (max-width: 700px) {
+    &__tools-container,
+    &__browse-container {
+      height: calc(100vh - 132px);
+    }
+
+    &__tools-filter-criteria {
+      & div {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    &__tools-tab,
+    &__browse-tab {
+      justify-content: normal;
+      flex-wrap: nowrap;
+      width: 100%;
+      overflow-y: hidden;
+      overflow-x: auto;
+
+      &::-webkit-scrollbar {
+        height: 5px;
+      }
+
+      & .nav-item .nav-link.active {
+        border: 1px solid #8ff129;
+        border-bottom: none;
+      }
+    }
+
+    &__tools-platform-btns {
+      margin-right: 0;
+    }
+
+    &__browse-cards {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    &__leaderboards-select-btn {
+      select {
+        font-size: 13px;
+      }
+    }
+
+    &__leaderboards-toggle-btn {
+      font-size: 13px;
+    }
+  }
+
+  @media screen and (max-width: 500px) {
+    &__tools-container,
+    &__browse-container {
+      height: calc(100vh - 158px);
+
+      & .container {
+        @include padding(16px, 12px, 20px, 12px);
+      }
+
+      &::-webkit-scrollbar {
+        width: 6px;
+      }
+    }
+
+    &__tools-tab,
+    &__browse-tab {
+      @include padding(12px, 12px, 0, 12px);
+      font-size: 14px;
+
+      & .nav-item .nav-link.active {
+        @include padding(8px, 8px, 8px, 8px);
+      }
+
+      &::-webkit-scrollbar {
+        height: 4px;
+      }
+    }
+
+    &__leaderboards-input,
+    &__tools-platform-btn {
+      font-size: 12px;
+    }
+
+    &__tools-filter,
+    &__browse-filter {
+      & div h6,
+      & label {
+        font-size: 13px;
+      }
+    }
+
+    &__tools-filter-criteria {
+      & div {
+        display: flex;
+        flex-wrap: wrap;
+      }
+    }
+
+    &__tools-table {
+      & thead {
+        font-size: 14px;
+      }
+
+      & tbody {
+        font-size: 12px;
+      }
+    }
+
+    &__tools-filter,
+    &__browse-filter {
+      @include padding(12px, 12px, 12px, 12px);
+    }
+
+    &__browse-rarity-section {
+      & div {
+        justify-content: flex-start;
+      }
+    }
+  }
+
+  @media screen and (max-width: 320px) {
+    &__tools-container,
+    &__browse-container {
+      height: calc(100vh - 158px);
+    }
+
+    &__tools-platform-btns {
+      margin-right: 0;
+    }
+
+    &__browse-cards {
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    &__leaderboards-select-btn {
+      select {
+        font-size: 12px;
+      }
+    }
+
+    &__leaderboards-toggle-btn,
+    &__browse-cards-icon p,
+    &__browse-cards-bottom-content p,
+    &__browse-cards-bottom-content button {
+      font-size: 12px;
+    }
+
+    &__browse-cards-top-content {
+      & div h6 {
+        font-size: 14px;
+      }
+    }
+
+    &__browse-rarity-section {
+      & h6 {
+        font-size: 13px;
+      }
+    }
+  }
+}
