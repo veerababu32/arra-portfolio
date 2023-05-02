@@ -98,7 +98,7 @@ const Browse = () => {
                           </Row>
                           <Row className="app__browse-rarity-section">
                             <h6>{browseData.boxDataName}</h6>
-                            <Col md={9} lg={6}>
+                            <Col md={9} lg={7}>
                               <div>
                                 {browseData.rarityData.map((rarity) => {
                                   return (
