@@ -8,12 +8,13 @@
   &__tools-container {
     height: calc(100vh - 131px);
     overflow-y: scroll;
+    width: 100%;
 
     & .container {
-      @include padding(24px, 24px, 24px, 24px);
+      padding: 24px;
 
       & form .row {
-        @include margin(0, 0, 16px, 0);
+        padding: 0 0 16px;
         align-items: center;
       }
     }
@@ -25,12 +26,12 @@
 
   &__tools-platform-btn {
     @include direction-justitfy-align-properities(row, center, center);
-    @include padding(4px, 15px, 4px, 15px);
-    background-color: #d3d3d345;
+    padding: 4px 15px;
+    background-color: $color-gray-600;
     border-radius: 50px;
     border: none;
     font-size: 14px;
-    color: gray;
+    color: $color-gray;
     white-space: nowrap;
 
     & svg {
@@ -61,7 +62,7 @@
       width: 30px;
       height: 12px;
       cursor: pointer;
-      background: #c3c2c2;
+      background: $color-gray-200;
       text-indent: -9999px;
       border-radius: 50px;
       @include margin(2px, 10px, 0, 0);
@@ -73,14 +74,14 @@
         left: 0px;
         width: 14px;
         height: 14px;
-        background: grey;
+        background: $color-gray;
         border-radius: 20px;
         transition: all 0.3s ease-in-out;
       }
     }
 
     &:checked + label {
-      background: #c3c2c2;
+      background: $color-gray-200;
 
       &:after {
         left: 100%;
@@ -94,14 +95,14 @@
   }
 
   &__tools-table {
-    border: 1px solid #0000000f;
+    border: 1px solid $color-black-100;
     border-collapse: collapse;
     margin: 0;
     white-space: nowrap;
 
     & thead {
-      background-color: #d3d3d345;
-      color: #a4a4a4;
+      background-color: $color-gray-600;
+      color: $color-gray-100;
     }
 
     & thead,
@@ -128,8 +129,8 @@
   }
 
   &__tools-card-table-data-icon {
-    background: #8ff129;
-    color: #fff;
+    background: $color-radium-theme;
+    color: $color-white;
     padding: 10px 10px;
     border-radius: 6px;
     margin-right: 5px;
@@ -138,8 +139,8 @@
   &__tools-line-bar-chart {
     width: 200px;
     border-radius: 10px;
-    border: 1px solid #0000001a;
-    box-shadow: 0 0 5px #0000000f;
+    border: 1px solid $color-black-300;
+    box-shadow: 0 0 5px $color-black-100;
   }
 
   @media screen and (max-width: 1000px) {
@@ -171,7 +172,7 @@
   @media screen and (max-width: 768px) {
     &__tools-container .container,
     &__browse-container .container {
-      @include padding(24px, 12px, 24px, 12px);
+      padding: 24px 12px;
     }
 
     &__tools-filter-criteria {
@@ -182,7 +183,7 @@
 
     &__tools-tab,
     &__browse-tab {
-      padding: 20px 12px 0 12px;
+      padding: 20px 12px 0;
       justify-content: space-between;
     }
 
@@ -216,7 +217,7 @@
       }
 
       & .nav-item .nav-link.active {
-        border: 1px solid #8ff129;
+        border: 1px solid $color-radium-theme;
         border-bottom: none;
       }
     }
@@ -246,7 +247,7 @@
       height: calc(100vh - 158px);
 
       & .container {
-        @include padding(16px, 12px, 20px, 12px);
+        padding: 16px 12px 20px;
       }
 
       &::-webkit-scrollbar {
@@ -256,11 +257,11 @@
 
     &__tools-tab,
     &__browse-tab {
-      @include padding(12px, 12px, 0, 12px);
+      padding: 12px 12px 0;
       font-size: 14px;
 
       & .nav-item .nav-link.active {
-        @include padding(8px, 8px, 8px, 8px);
+        padding: 8px;
       }
 
       &::-webkit-scrollbar {
@@ -300,7 +301,7 @@
 
     &__tools-filter,
     &__browse-filter {
-      @include padding(12px, 12px, 12px, 12px);
+      padding: 12px;
     }
 
     &__browse-rarity-section {

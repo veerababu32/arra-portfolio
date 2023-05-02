@@ -8,22 +8,23 @@
   &__browse-container {
     height: calc(100vh - 131px);
     overflow-y: scroll;
+    width: 100%;
 
     & .container {
-      @include padding(24px, 24px, 24px, 24px);
+      padding: 24px;
 
       & form .row {
-        @include margin(0, 0, 16px, 0);
+        margin: 0 0 16px;
         align-items: center;
       }
 
       & form .row .col {
-        color: #a4a4a4;
+        color: $color-gray-100;
         border: none;
 
         & select {
           width: auto;
-          color: #a4a4a4;
+          color: $color-gray-100;
           border: none;
         }
       }
@@ -36,8 +37,8 @@
       & .row .col-7 h6 {
         font-size: 14px;
         font-weight: normal;
-        color: #a4a4a4;
-        margin: 0 0 12px 0;
+        color: $color-gray-100;
+        margin: 0 0 12px;
       }
     }
   }
@@ -90,7 +91,7 @@
       }
 
       & .card-body {
-        padding: 8px 12px 10px 12px;
+        padding: 8 12px 10px;
       }
     }
   }
@@ -106,13 +107,12 @@
 
   &__browse-cards-bottom-content {
     & p {
-      margin: 0 0 8px 0;
+      margin: 0 0 8px;
     }
   }
 
   &__browse-cards-icon {
-    display: flex;
-    align-items: center;
+    @include display-align-properities(center);
 
     & div {
       display: flex;
@@ -134,7 +134,7 @@
     @include display-align-properities(center);
     border: none;
     border-radius: 5px;
-    color: #a4a4a4;
+    color: $color-gray-100;
     font-size: 12px;
     padding: 4px 6px;
 
@@ -149,13 +149,12 @@
     margin-bottom: 0 !important;
     & h6 {
       margin: 0;
-      color: gray;
+      color: $color-gray;
       font-size: 14px;
     }
 
     & div {
-      display: flex;
-      justify-content: space-between;
+      @include display-justify-properities(space-between);
       flex-wrap: wrap;
       gap: 10px;
     }
@@ -190,7 +189,7 @@
   @media screen and (max-width: 768px) {
     &__tools-container .container,
     &__browse-container .container {
-      @include padding(24px, 12px, 24px, 12px);
+      padding: 24px 12px;
     }
 
     &__tools-filter-criteria {
@@ -201,7 +200,7 @@
 
     &__tools-tab,
     &__browse-tab {
-      padding: 20px 12px 0 12px;
+      padding: 20px 12px 0;
       justify-content: space-between;
     }
 
@@ -235,7 +234,7 @@
       }
 
       & .nav-item .nav-link.active {
-        border: 1px solid #8ff129;
+        border: 1px solid $color-radium-theme;
         border-bottom: none;
       }
     }
@@ -265,7 +264,7 @@
       height: calc(100vh - 158px);
 
       & .container {
-        @include padding(16px, 12px, 20px, 12px);
+        padding: 16px 12px 20px;
       }
 
       &::-webkit-scrollbar {
@@ -275,11 +274,11 @@
 
     &__tools-tab,
     &__browse-tab {
-      @include padding(12px, 12px, 0, 12px);
+      padding: 12px 12px 0;
       font-size: 14px;
 
       & .nav-item .nav-link.active {
-        @include padding(8px, 8px, 8px, 8px);
+        padding: 8px;
       }
 
       &::-webkit-scrollbar {
@@ -319,7 +318,7 @@
 
     &__tools-filter,
     &__browse-filter {
-      @include padding(12px, 12px, 12px, 12px);
+      padding: 12px;
     }
 
     &__browse-rarity-section {

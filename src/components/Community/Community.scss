@@ -7,8 +7,8 @@
 
   &__community-stories {
     display: flex;
-    @include padding(16px, 20px, 16px, 20px);
-    border-bottom: 1px solid #0000000f;
+    padding: 16px 20px;
+    border-bottom: 1px solid $color-black-100;
 
     & > div {
       @include direction-justitfy-align-properities(column, center, center);
@@ -22,7 +22,7 @@
 
       & p {
         font-size: 12px;
-        color: #a4a4a4;
+        color: $color-gray-100;
         margin: 0;
       }
 
@@ -36,17 +36,18 @@
       width: 50px;
       margin-right: 5px;
       border-radius: 50%;
-      background-color: #8ff129;
-      border: 1px solid #8ff129;
+      background-color: $color-radium-theme;
+      border: 1px solid $color-radium-theme;
     }
   }
 
   &__community-container {
     height: calc(100vh - 167px);
     overflow-y: auto;
+    width: 100%;
 
     & .container {
-      @include padding(24px, 24px, 24px, 24px);
+      padding: 24px;
     }
   }
 
@@ -59,21 +60,21 @@
   }
 
   &__community-input {
-    @include margin(0, 20px, 0, 0);
+    margin: 0 20px 0;
   }
 
   &__community-btn {
-    @include padding(5px, 40px, 5px, 40px);
-    background-color: #8ff129;
-    color: white;
+    background-color: $color-radium-theme;
+    color: $color-white;
     border-radius: 40px;
-    border: 1px solid #8ff129;
+    border: 1px solid $color-radium-theme;
+    padding: 5px 40px;
     transition: all 0.3s ease-in-out;
 
     &:hover {
-      background-color: white !important;
-      color: #8ff129;
-      border: 1px solid #0000001a;
+      background-color: $color-white !important;
+      color: $color-radium-theme;
+      border: 1px solid $color-black-300;
       transition: all 0.3s ease-in-out;
     }
   }
@@ -83,13 +84,13 @@
 
     & div h5 {
       font-size: 14px;
-      @include margin(0, 0, 1px, 0);
+      margin: 0 0 1px;
     }
 
     & div p {
       font-size: 12px;
-      color: #a4a4a4;
-      @include margin(0, 0, 0, 0);
+      color: $color-gray-100;
+      margin: 0;
     }
   }
 
@@ -98,8 +99,8 @@
     width: 50px;
     margin-right: 5px;
     border-radius: 50%;
-    background-color: #8ff129;
-    border: 1px solid #8ff129;
+    background-color: $color-radium-theme;
+    border: 1px solid $color-radium-theme;
 
     & img {
       height: 100%;
@@ -125,7 +126,7 @@
 
   &__community-accordion-post-card {
     @include display-justify-properities(space-between);
-    @include padding(0, 10px, 0, 10px);
+    padding: 0 10px;
     margin-bottom: 8px;
 
     & div svg {
@@ -140,9 +141,9 @@
 
     & ~ p {
       font-size: 12px;
-      color: #a4a4a4;
+      color: $color-gray-100;
       text-align: justify;
-      @include margin(0, 0, 0, 0);
+      margin: 0;
     }
   }
 
@@ -159,7 +160,7 @@
   }
 
   .accordion-button:not(.collapsed) {
-    color: black;
+    color: $color-black;
     background-color: transparent;
   }
 
@@ -167,23 +168,23 @@
     margin-bottom: 20px;
 
     & .card-body {
-      @include padding(0, 0, 0, 0);
+      padding: 0;
     }
 
     &--top {
       @include display-justify-properities(space-between);
-      @include padding(10px, 10px, 0, 10px);
+      padding: 10px 10px 0;
 
       & > div {
         @include display-align-properities(center);
       }
 
       & div div h6 {
-        @include margin(0, 0, 4px, 0);
+        margin: 0 0 4px;
       }
 
       & div div p {
-        @include margin(0, 0, 0, 0);
+        margin: 0;
       }
     }
 
@@ -192,8 +193,8 @@
       width: 50px;
       margin-right: 5px;
       border-radius: 50%;
-      background-color: #8ff129;
-      border: 1px solid #8ff129;
+      background-color: $color-radium-theme;
+      border: 1px solid $color-radium-theme;
 
       & img {
         height: 100%;
@@ -204,42 +205,42 @@
 
     &--btn {
       font-size: 10px;
-      color: #a4a4a4;
+      color: $color-gray-100;
       cursor: pointer;
-      @include padding(10px, 10px, 10px, 10px);
+      padding: 10px;
     }
 
     &--loc {
       font-size: 11px;
       padding-left: 66px;
-      color: #a4a4a4;
-      @include margin(0, 0, 0, 0);
-      border-bottom: 1px solid rgba(0, 0, 0, 0.175);
+      color: $color-gray-100;
+      margin: 0;
+      border-bottom: 1px solid $color-black-400;
     }
 
     &--bottom {
       @include display-justify-properities(space-between);
-      @include padding(5px, 10px, 10px, 10px);
+      padding: 5px 10px 10px;
 
       & div h6 {
-        color: #a4a4a4;
-        @include margin(0, 0, 4px, 0);
+        color: $color-gray-100;
+        margin: 0 0 4px;
       }
 
       & div p {
-        @include margin(0, 0, 0, 0);
+        margin: 0;
       }
     }
 
     & .card-body div div h6 {
       font-size: 12px;
-      @include margin(0, 0, 1px, 0);
+      margin: 0 0 1px;
     }
 
     & .card-body div div p {
       font-size: 10px;
-      color: #a4a4a4;
-      @include margin(0, 0, 0, 0);
+      color: $color-gray-100;
+      margin: 0;
     }
   }
 
@@ -256,14 +257,14 @@
     margin-bottom: 16px;
 
     & h6 {
-      @include margin(0, 0, 0, 0);
+      margin: 0;
     }
 
     & p {
       font-size: 10px;
-      color: #a4a4a4;
+      color: $color-gray-100;
       cursor: pointer;
-      @include margin(0, 0, 0, 0);
+      margin: 0;
     }
   }
 
@@ -287,14 +288,14 @@
 
     &--data {
       & h6 {
-        color: #8ff129;
-        @include margin(0, 0, 4px, 0);
+        color: $color-radium-theme;
+        margin: 0 0 4px;
       }
 
       & p {
         font-size: 12px;
-        color: #a4a4a4;
-        @include margin(0, 0, 0, 0);
+        color: $color-gray-100;
+        margin: 0;
       }
     }
   }
@@ -345,7 +346,7 @@
     &__community-stories {
       width: 100%;
       overflow: auto;
-      padding: 12px 16px 12px 16px;
+      padding: 12px 16px;
 
       & > div p {
         text-align: center;
@@ -384,7 +385,7 @@
       height: calc(100vh - 204px);
 
       & .container {
-        @include padding(16px, 12px, 20px, 12px);
+        padding: 16px 12px 20px;
       }
     }
 
@@ -407,7 +408,7 @@
     }
 
     &__community-input {
-      @include margin(0, 0, 10px, 0);
+      margin: 0 0 10px;
       &::placeholder {
         font-size: 14px;
       }
@@ -422,7 +423,7 @@
     }
 
     .accordion-body {
-      @include padding(10px, 5px, 5px, 5px);
+      padding: 10px 5px 5px;
     }
 
     &__community-accordion-post-card div svg {
