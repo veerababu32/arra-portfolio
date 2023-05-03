@@ -1,4 +1,4 @@
-import { Card, Col, Container, Row, Table } from "react-bootstrap";
+import { Col, Container, Row, Table } from "react-bootstrap";
 import { BsMeta, BsThreeDotsVertical } from "react-icons/bs";
 import { AiOutlineStar } from "react-icons/ai";
 import {
@@ -42,11 +42,11 @@ const Dashboard = () => {
                     <div className="app__dashboard-assets">
                       {items.data.map(function (item) {
                         return (
-                          <Card
-                            className={`app__dashboard-assets-card card--${item.num}`}
+                          <div
+                            className={`card app__dashboard-assets-card card--${item.num}`}
                             key={item.num}
                           >
-                            <Card.Body className="app__dashboard-assets-card-body">
+                            <div className="card-body app__dashboard-assets-card-body">
                               <div className="top-section">
                                 <div>
                                   <h6>{item.title}</h6>
@@ -62,8 +62,8 @@ const Dashboard = () => {
                                 <p>{item.description}</p>
                                 <p>{item.subDes}</p>
                               </div>
-                            </Card.Body>
-                          </Card>
+                            </div>
+                          </div>
                         );
                       })}
                     </div>

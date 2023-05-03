@@ -59,8 +59,19 @@
     }
   }
 
+  &__leaderboards-input,
   &__community-input {
-    margin: 0 20px 0;
+    border-radius: 50px;
+    border-color: $color-radium-theme;
+    color: $color-gray-700;
+
+    &::placeholder {
+      color: $color-gray-700;
+    }
+  }
+
+  &__community-input {
+    margin: 0 20px 0 0;
   }
 
   &__community-btn {

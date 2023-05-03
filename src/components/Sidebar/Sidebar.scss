@@ -14,6 +14,8 @@
   &__sidebar-links {
     @include display-direction-properties(column);
     padding: 0 10px;
+    overflow: auto;
+    height: 206px;
 
     & a {
       margin-bottom: 6px;
@@ -21,6 +23,10 @@
 
     & a:nth-last-child(1) {
       margin-bottom: 0;
+    }
+
+    &::-webkit-scrollbar {
+      width: 6px;
     }
   }
 
@@ -85,7 +91,7 @@
 
     &__sidebar-logo-section {
       @include display-justify-properities(flex-end);
-      min-width: 240px;
+      min-width: 9rem;
       height: 72px;
     }
 

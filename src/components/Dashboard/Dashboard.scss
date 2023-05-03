@@ -2,12 +2,12 @@
 
 .app {
   &__dashboard-portifolio {
-    border: 1px solid #dee2e6;
+    border: 1px solid $color-white-200;
   }
 
   &__dashboard-portifolio-content {
     @include direction-justitfy-align-properities(row, space-between, center);
-    @include margin(8px, 8px, 8px, 8px);
+    padding: 8px;
   }
 
   &__dashboard-portifolio-content-left {
@@ -21,7 +21,7 @@
 
   &__dashboard-portifolio-content-right {
     & a svg {
-      color: black;
+      color: $color-black;
     }
   }
 
@@ -32,23 +32,22 @@
   }
 
   &__dashboard-assets-card {
-    height: 200px;
-    border-radius: 20px;
+    height: 200px !important;
 
     &.card--one {
-      background-color: #c7bcdd;
+      background-color: $color-violet-100;
     }
 
     &.card--two {
-      background-color: #ffefbd;
+      background-color: $color-pink-100;
     }
 
     &.card--three {
-      background-color: #c3fcce;
+      background-color: $color-green-100;
     }
 
     &.card--four {
-      background-color: #fcfcbe;
+      background-color: $color-yellow-100;
     }
 
     & .card-body div p {
@@ -63,15 +62,15 @@
       @include display-justify-properities(space-between);
 
       & div h6 {
-        @include margin(0, 0, 0, 0);
+        margin: 0;
       }
 
       & div p {
-        @include margin(0, 0, 0, 0);
+        margin: 0;
       }
 
       & a svg {
-        color: black;
+        color: $color-black;
       }
     }
 
@@ -79,17 +78,17 @@
       @include display-justify-properities(space-between);
 
       & p {
-        @include margin(0, 0, 0, 0);
+        margin: 0;
       }
 
       & p:last-child {
-        color: white;
+        color: $color-white;
       }
     }
   }
 
   &__dashboard-assets-performance {
-    @include padding(0, 30px, 0, 12px);
+    padding: 0 30px 0 12px;
   }
 
   &__dashboard-assets-performance-header {
@@ -118,26 +117,26 @@
 
   &__dashboard-table {
     & tr {
-      white-space: nowrap;
+      $color-white-space: nowrap;
     }
   }
 
   &__dashboard-assets-invite {
     padding: 20px;
     border-radius: 20px;
-    border: 1px solid #0000000f;
+    border: 1px solid $color-black-100;
 
     & h5 {
-      color: #8ff129;
+      color: $color-radium-theme;
     }
 
     & h6 {
-      color: black;
+      color: $color-black;
     }
 
     & p {
       font-size: 12px;
-      color: #a4a4a4;
+      color: $color-gray-100;
     }
   }
 
@@ -150,17 +149,17 @@
     }
 
     & button {
-      background-color: #8ff129;
-      color: white;
+      background-color: $color-radium-theme;
+      color: $color-white;
       border: none;
       border-radius: 5px;
-      @include padding(0, 20px, 0, 20px);
+      padding: 0 20px;
     }
   }
 
   &__dashboard-assets-invite-img {
     height: 120px;
-    background-color: #f5f8fe;
+    background-color: $color-white-300;
     text-align: center;
     margin-bottom: 16px;
 
@@ -178,7 +177,7 @@
     }
 
     & p:first-child {
-      color: black;
+      color: $color-black;
     }
   }
 

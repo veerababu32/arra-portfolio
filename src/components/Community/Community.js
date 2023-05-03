@@ -15,6 +15,7 @@ import {
 } from "../../constants/data";
 import { BsHeart, BsChat, BsSend, BsBookmark } from "react-icons/bs";
 import Layout from "../Layout/Layout";
+import "./Community.scss";
 
 const Community = () => {
   const [index, setIndex] = useState(0);

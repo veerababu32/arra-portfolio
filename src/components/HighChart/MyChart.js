@@ -18,7 +18,7 @@ const MyChart = () => {
           Highcharts.stockChart("dashboardContainer", {
             chart: {
               zoomType: "xy",
-              height: 340,
+              height: 346,
             },
 
             accessibility: {

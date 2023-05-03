@@ -23,14 +23,6 @@
   align-items: $align-items;
 }
 
-@mixin padding($top, $right, $bottom, $left) {
-  padding: $top $right $bottom $left;
-}
-
-@mixin margin($top, $right, $bottom, $left) {
-  margin: $top $right $bottom $left;
-}
-
 @mixin display-align-properities($align-items) {
   display: flex;
   align-items: $align-items;

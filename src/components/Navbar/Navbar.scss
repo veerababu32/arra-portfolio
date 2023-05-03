@@ -150,9 +150,8 @@
   }
 
   &__navbar-notification-dropdown {
-    max-width: 300px;
-    min-width: 280px;
-    padding: 0;
+    min-width: 280px !important;
+    padding: 0 !important;
   }
 
   &__navbar-user-dropdown {
@@ -161,6 +160,7 @@
 
   .dropdown-divider {
     height: 0;
+    margin: 0;
     overflow: hidden;
     border-top: 1px solid $color-white-100;
   }
@@ -181,7 +181,7 @@
 
   @media screen and (max-width: 1240px) {
     &__navbar-logo-section {
-      min-width: 210px;
+      min-width: 144px;
       z-index: 1100;
     }
 
@@ -192,7 +192,7 @@
     &__navbar-left-section {
       flex-direction: column !important;
       align-items: flex-start;
-      flex-wrap: inherit;
+      flex-wrap: inherit !important;
       max-width: fit-content;
       position: fixed;
       overflow: hidden;
@@ -222,7 +222,6 @@
       border: none;
       border-radius: 0;
       margin-right: 0;
-      padding: 0;
 
       &.active {
         border: none;
@@ -240,7 +239,6 @@
       border-radius: 0;
       transition: none;
       margin-right: 0;
-      padding: 0;
 
       &.active {
         border: none;
@@ -322,12 +320,6 @@
       }
     }
 
-    &__navbar-search-icon,
-    &__navbar-notification-icon,
-    &__navbar-user-icon {
-      padding: 6px;
-    }
-
     .app__navbar-badge {
       right: 2px;
       top: 2px;
@@ -343,6 +335,11 @@
       &.show {
         top: 96px;
       }
+    }
+
+    &__navbar-notification-dropdown {
+      min-width: 210px !important;
+      font-size: 12px !important;
     }
   }
 }

@@ -22,17 +22,6 @@
     }
   }
 
-  &__leaderboards-input,
-  &__community-input {
-    border-radius: 50px;
-    border-color: $color-radium-theme;
-    color: $color-gray-700;
-
-    &::placeholder {
-      color: $color-gray-700;
-    }
-  }
-
   &__leaderboards-table {
     border: 1px solid $color-black-100;
     border-collapse: collapse;

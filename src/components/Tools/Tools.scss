@@ -65,7 +65,7 @@
       background: $color-gray-200;
       text-indent: -9999px;
       border-radius: 50px;
-      @include margin(2px, 10px, 0, 0);
+      margin: 2px 10px 0 0;
 
       &:after {
         content: "";

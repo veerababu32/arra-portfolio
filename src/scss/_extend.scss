@@ -1,15 +1,15 @@
 %navbar-right-icons {
-  color: black !important;
+  color: $color-black;
   border-radius: 50%;
-  border: 1px solid black !important;
-  padding: 8px !important;
+  border: 1px solid $color-black;
+  padding: 8px;
   display: flex !important;
   align-items: center;
   transition: 0.3s;
 
   &:hover {
-    background-color: #8ff129;
-    color: white;
+    background-color: $color-radium-theme;
+    color: $color-white;
     transition: 0.3s;
   }
 
@@ -25,32 +25,32 @@
 }
 
 %app-tools-browse-tabs {
-  @include padding(20px, 20px, 0, 20px);
+  padding: 20px 20px 0;
 
   & .nav-item {
     width: calc(100% / 3);
     white-space: nowrap;
 
     & .nav-link {
-      color: #a4a4a4;
+      color: $color-gray-100;
 
       &:hover {
         border-color: transparent;
-        color: black;
+        color: $color-black;
       }
 
       &.active {
-        color: black;
+        color: $color-black;
         border-color: transparent;
-        border-bottom: 4px solid #8ff129;
+        border-bottom: 4px solid $color-radium-theme;
       }
     }
   }
 }
 
 %app-tools-browse-filter {
-  @include padding(20px, 20px, 20px, 20px);
-  background-color: #d3d3d345;
+  padding: 20px;
+  background-color: $color-gray-600;
   border-radius: 10px;
   margin-bottom: 40px;
 
@@ -60,29 +60,29 @@
   }
 
   & label {
-    color: gray;
+    color: $color-gray;
     font-size: 14px;
     white-space: nowrap;
   }
 
   & select {
     background-color: transparent;
-    color: gray;
+    color: $color-gray;
     font-size: 12px;
   }
 
   & div h6 {
-    color: gray;
+    color: $color-gray;
   }
 
   & div button {
     @include display-align-properities(center);
-    @include padding(4px, 10px, 4px, 10px);
-    background-color: #a9a9a969;
+    padding: 4px 10px;
+    background-color: $color-gray-400;
     border-radius: 50px;
     border: 0;
     font-size: 12px;
-    color: gray;
+    color: $color-gray;
     white-space: nowrap;
   }
 }

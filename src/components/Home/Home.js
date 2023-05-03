@@ -1,4 +1,4 @@
-import { Card, Col, Container, Row, Table } from "react-bootstrap";
+import { Col, Container, Row, Table } from "react-bootstrap";
 import { BsMeta, BsThreeDotsVertical } from "react-icons/bs";
 import { homeCardsData, homeTopStoriesData } from "../../constants/data";
 import Layout from "../Layout/Layout";
@@ -79,11 +79,15 @@ const Home = () => {
                       className="app__home-stories"
                       key={item.cardId}
                     >
-                      <Card className="app__home-stories-card">
-                        <Card.Header className="app__home-stories-card-img">
-                          <Card.Img src={item.img} alt={item.alt} />
-                        </Card.Header>
-                        <Card.Body className="app__home-stories-card-body">
+                      <div className="card app__home-stories-card">
+                        <div className="card-header app__home-stories-card-img">
+                          <img
+                            src={item.img}
+                            alt={item.alt}
+                            className="card-img"
+                          />
+                        </div>
+                        <div className="card-body app__home-stories-card-body">
                           <div className="app__home-stories-card-body-sub-title">
                             <h6>{item.subTitle}</h6>
                             <p>{item.date}</p>
@@ -99,8 +103,8 @@ const Home = () => {
                               </a>
                             </div>
                           </div>
-                        </Card.Body>
-                      </Card>
+                        </div>
+                      </div>
                     </Col>
                   );
                 })}
