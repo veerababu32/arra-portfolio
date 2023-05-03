@@ -181,7 +181,7 @@
     }
   }
 
-  @media screen and (max-width: 1200px) {
+  @include breakpoint(xlarge-desktop) {
     &__dashboard-portifolio {
       margin-bottom: 20px;
     }
@@ -195,13 +195,13 @@
     }
   }
 
-  @media screen and (max-width: 768px) {
+  @include breakpoint(md-ipad) {
     &__dashboard-assets {
       grid-template-columns: repeat(2, 1fr);
     }
   }
 
-  @media screen and (max-width: 480px) {
+  @include breakpoint(xsmall-mobile-max) {
     &__dashboard-assets {
       grid-template-columns: repeat(1, 1fr);
     }

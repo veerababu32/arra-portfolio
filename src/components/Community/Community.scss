@@ -311,7 +311,7 @@
     }
   }
 
-  @media screen and (max-width: 768px) {
+  @include breakpoint(md-ipad) {
     &__community-accordion {
       margin-bottom: 16px;
     }
@@ -349,7 +349,7 @@
     }
   }
 
-  @media screen and (max-width: 740px) {
+  @include breakpoint(md-ipad-min) {
     &__community-container {
       height: calc(100vh - 177px);
     }
@@ -391,7 +391,7 @@
     }
   }
 
-  @media screen and (max-width: 540px) {
+  @include breakpoint(portrait-mobile-max) {
     &__community-container {
       height: calc(100vh - 204px);
 

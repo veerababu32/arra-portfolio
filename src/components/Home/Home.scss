@@ -155,7 +155,7 @@
     }
   }
 
-  @media screen and (max-width: 1240px) {
+  @include breakpoint(xlarge-desktop-max) {
     &__home-container {
       width: 100%;
     }
@@ -174,7 +174,7 @@
     }
   }
 
-  @media screen and (max-width: 680px) {
+  @include breakpoint(sm-mobile-max) {
     & .container {
       padding: 24px 16px;
     }
@@ -221,7 +221,7 @@
     }
   }
 
-  @media screen and (max-width: 540px) {
+  @include breakpoint(portrait-mobile-max) {
     &__home-container {
       height: calc(100vh - 100px);
     }
@@ -256,7 +256,7 @@
     }
   }
 
-  @media screen and (max-width: 320px) {
+  @include breakpoint(xsmall-mobile-max) {
     &__home-container {
       .container {
         padding: 16px 12px 20px;

@@ -64,7 +64,7 @@
     margin: 0 10px 2px;
   }
 
-  @media screen and (max-width: 1240px) {
+  @include breakpoint(xlarge-desktop-max) {
     &__sidebar {
       position: fixed;
       background: $color-white;
@@ -113,7 +113,7 @@
     }
   }
 
-  @media screen and (max-width: 540px) {
+  @include breakpoint(xsmall-mobile-max) {
     &__sidebar.active {
       width: 100%;
     }

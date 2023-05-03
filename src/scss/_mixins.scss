@@ -60,3 +60,46 @@
   bottom: $bottom;
   left: $left;
 }
+
+$breakpoints: (
+  "xsmall-mobile": (
+    max-width: 320px,
+  ),
+  "xsmall-mobile-max": (
+    max-width: 480px,
+  ),
+  "portrait-mobile-min": (
+    max-width: 500px,
+  ),
+  "portrait-mobile-max": (
+    max-width: 540px,
+  ),
+  "sm-mobile-max": (
+    max-width: 680px,
+  ),
+  "md-ipad-min": (
+    min-width: 700px,
+  ),
+  "md-ipad": (
+    max-width: 768px,
+  ),
+  "lg-desktop": (
+    max-width: 1000px,
+  ),
+  "xlarge-desktop": (
+    min-width: 1200px,
+  ),
+  "xlarge-desktop-max": (
+    max-width: 1240px,
+  ),
+);
+
+@mixin breakpoint($name) {
+  @if map-has-key($breakpoints, $name) {
+    @media screen and #{inspect(map-get($breakpoints, $name))} {
+      @content;
+    }
+  } @else {
+    @warn "Couldn't find a breakpoint named `#{$name}`.";
+  }
+}

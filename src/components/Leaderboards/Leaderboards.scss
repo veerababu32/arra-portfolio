@@ -32,7 +32,7 @@
     }
   }
 
-  @media screen and (max-width: 768px) {
+  @include breakpoint(md-ipad) {
     &__leaderboards-section {
       & .container h4,
       & .container form .row {
@@ -42,7 +42,7 @@
     }
   }
 
-  @media screen and (max-width: 320px) {
+  @include breakpoint(xsmall-mobile-max) {
     &__leaderboards-section {
       & .container h4,
       & .container form .row {

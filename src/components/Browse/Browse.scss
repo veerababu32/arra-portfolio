@@ -160,7 +160,7 @@
     }
   }
 
-  @media screen and (max-width: 1000px) {
+  @include breakpoint(lg-desktop) {
     &__tools-filter,
     &__browse-filter {
       margin-bottom: 20px;
@@ -186,7 +186,7 @@
     }
   }
 
-  @media screen and (max-width: 768px) {
+  @include breakpoint(md-ipad) {
     &__tools-container .container,
     &__browse-container .container {
       padding: 24px 12px;
@@ -209,7 +209,7 @@
     }
   }
 
-  @media screen and (max-width: 700px) {
+  @include breakpoint(md-ipad-min) {
     &__tools-container,
     &__browse-container {
       height: calc(100vh - 132px);
@@ -258,7 +258,7 @@
     }
   }
 
-  @media screen and (max-width: 500px) {
+  @include breakpoint(portrait-mobile-min) {
     &__tools-container,
     &__browse-container {
       height: calc(100vh - 158px);
@@ -328,7 +328,7 @@
     }
   }
 
-  @media screen and (max-width: 320px) {
+  @include breakpoint(xsmall-mobile) {
     &__tools-container,
     &__browse-container {
       height: calc(100vh - 158px);
