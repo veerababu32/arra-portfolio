@@ -36,7 +36,7 @@
     &__leaderboards-section {
       & .container h4,
       & .container form .row {
-        font-size: 18px;
+        font-size: $font-size-h4-xs-max;
         margin-bottom: 16px;
       }
     }
@@ -46,18 +46,18 @@
     &__leaderboards-section {
       & .container h4,
       & .container form .row {
-        font-size: 16px;
+        font-size: $font-size-h4-xs;
         margin-bottom: 12px;
       }
     }
 
     &__leaderboards-table {
       & thead {
-        font-size: 14px;
+        font-size: $font-size-thead-xs;
       }
 
       & tbody {
-        font-size: 12px;
+        font-size: $font-size-tbody-xs;
       }
     }
   }

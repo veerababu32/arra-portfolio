@@ -78,7 +78,7 @@ $breakpoints: (
     max-width: 680px,
   ),
   "md-ipad-min": (
-    min-width: 700px,
+    max-width: 700px,
   ),
   "md-ipad": (
     max-width: 768px,
@@ -87,7 +87,7 @@ $breakpoints: (
     max-width: 1000px,
   ),
   "xlarge-desktop": (
-    min-width: 1200px,
+    max-width: 1200px,
   ),
   "xlarge-desktop-max": (
     max-width: 1240px,

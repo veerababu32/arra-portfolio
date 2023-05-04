@@ -35,7 +35,7 @@
       }
 
       & .row .col-7 h6 {
-        font-size: 14px;
+        font-size: $font-size-h6-xs-max;
         font-weight: normal;
         color: $color-gray-100;
         margin: 0 0 12px;
@@ -135,12 +135,12 @@
     border: none;
     border-radius: 5px;
     color: $color-gray-100;
-    font-size: 12px;
+    font-size: $font-size-btn-xs-min;
     padding: 4px 6px;
 
     & svg {
       vertical-align: baseline;
-      font-size: 12px;
+      font-size: $font-size-svg-xs-min;
       margin-right: 4px;
     }
   }
@@ -249,12 +249,12 @@
 
     &__leaderboards-select-btn {
       select {
-        font-size: 13px;
+        font-size: $font-size-btn-xs;
       }
     }
 
     &__leaderboards-toggle-btn {
-      font-size: 13px;
+      font-size: $font-size-btn-xs;
     }
   }
 
@@ -275,7 +275,7 @@
     &__tools-tab,
     &__browse-tab {
       padding: 12px 12px 0;
-      font-size: 14px;
+      font-size: $font-size-p;
 
       & .nav-item .nav-link.active {
         padding: 8px;
@@ -288,14 +288,14 @@
 
     &__leaderboards-input,
     &__tools-platform-btn {
-      font-size: 12px;
+      font-size: $font-size-btn-xs-min;
     }
 
     &__tools-filter,
     &__browse-filter {
       & div h6,
       & label {
-        font-size: 13px;
+        font-size: $font-size-btn-xs;
       }
     }
 
@@ -308,11 +308,11 @@
 
     &__tools-table {
       & thead {
-        font-size: 14px;
+        font-size: $font-size-thead-xs;
       }
 
       & tbody {
-        font-size: 12px;
+        font-size: $font-size-tbody-xs;
       }
     }
 
@@ -344,7 +344,7 @@
 
     &__leaderboards-select-btn {
       select {
-        font-size: 12px;
+        font-size: $font-size-btn-xs-min;
       }
     }
 
@@ -352,18 +352,18 @@
     &__browse-cards-icon p,
     &__browse-cards-bottom-content p,
     &__browse-cards-bottom-content button {
-      font-size: 12px;
+      font-size: $font-size-p-max;
     }
 
     &__browse-cards-top-content {
       & div h6 {
-        font-size: 14px;
+        font-size: $font-size-h6-xs-max;
       }
     }
 
     &__browse-rarity-section {
       & h6 {
-        font-size: 13px;
+        font-size: $font-size-btn-xs;
       }
     }
   }

@@ -2,7 +2,7 @@
 
 .app {
   &__home-container {
-    height: calc(100vh - 62px);
+    height: calc(100vh - 66px);
     overflow-y: scroll;
     width: 100%;
 
@@ -60,7 +60,7 @@
 
     & div h6,
     & div p {
-      font-size: 10px;
+      font-size: $font-size-p-xs;
       margin: 0;
     }
 
@@ -99,8 +99,8 @@
   }
 
   &__home-stories-card {
-    flex-direction: row;
-    border-radius: 20px;
+    flex-direction: row !important;
+    border-radius: 20px !important;
     overflow: hidden;
   }
 
@@ -109,7 +109,7 @@
     max-height: 140px;
     overflow: hidden;
     cursor: pointer;
-    padding: 0;
+    padding: 0 !important;
     border: 0;
 
     & img {
@@ -125,11 +125,11 @@
   }
 
   &__home-stories-card-body {
-    max-width: calc(100% - 360px);
+    max-width: calc(100% - 360px) !important;
 
     & p {
       color: $color-gray-300;
-      font-size: 14px;
+      font-size: $font-size-p;
       margin: 0;
     }
 
@@ -170,7 +170,7 @@
     }
 
     &__home-stories-card-body {
-      max-width: 100%;
+      max-width: 100% !important;
     }
   }
 
@@ -181,17 +181,17 @@
 
     &__home-cards {
       & h4 {
-        font-size: 20px;
+        font-size: $font-size-h4-sm;
       }
     }
 
     &__home-card {
       & h5 {
-        font-size: 18px;
+        font-size: $font-size-h5-sm;
       }
 
       & h6 {
-        font-size: 16px;
+        font-size: $font-size-h6-sm;
       }
 
       & .card-top {
@@ -204,7 +204,7 @@
     }
 
     &__home-stories-card {
-      flex-direction: column;
+      flex-direction: column !important;
     }
 
     &__home-stories-card-img {
@@ -213,32 +213,30 @@
     }
 
     &__home-stories-card-body {
-      width: 100%;
-
       & h5 {
-        font-size: 14px;
+        font-size: $font-size-h5-xs;
       }
     }
   }
 
   @include breakpoint(portrait-mobile-max) {
     &__home-container {
-      height: calc(100vh - 100px);
+      height: calc(100vh - 104px);
     }
 
     &__home-cards {
       & h4 {
-        font-size: 18px;
+        font-size: $font-size-h4-xs-max;
       }
     }
 
     &__home-card {
       & h5 {
-        font-size: 16px;
+        font-size: $font-size-h5-xs-max;
       }
 
       & h6 {
-        font-size: 14px;
+        font-size: $font-size-h6-xs-max;
       }
 
       & .card-top {
@@ -269,17 +267,17 @@
 
     &__home-cards {
       & h4 {
-        font-size: 16px;
+        font-size: $font-size-h4-xs;
       }
     }
 
     &__home-card {
       & h5 {
-        font-size: 14px;
+        font-size: $font-size-h5-xs;
       }
 
       & h6 {
-        font-size: 12px;
+        font-size: $font-size-h6-xs;
       }
     }
 
@@ -299,16 +297,16 @@
 
     &__home-table {
       & thead {
-        font-size: 14px;
+        font-size: $font-size-thead-xs;
       }
 
       & tbody {
-        font-size: 12px;
+        font-size: $font-size-tbody-xs;
       }
     }
 
     &__home-stories-card-body p {
-      font-size: 12px;
+      font-size: $font-size-p-max;
     }
   }
 }

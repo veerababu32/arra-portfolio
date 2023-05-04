@@ -81,11 +81,7 @@ const Home = () => {
                     >
                       <div className="card app__home-stories-card">
                         <div className="card-header app__home-stories-card-img">
-                          <img
-                            src={item.img}
-                            alt={item.alt}
-                            className="card-img"
-                          />
+                          <img src={item.img} alt={item.alt} />
                         </div>
                         <div className="card-body app__home-stories-card-body">
                           <div className="app__home-stories-card-body-sub-title">

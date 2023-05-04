@@ -15,7 +15,7 @@
 
     & p {
       margin: 0;
-      font-size: 12px;
+      font-size: $font-size-p-max;
     }
   }
 
@@ -51,7 +51,7 @@
     }
 
     & .card-body div p {
-      font-size: 12px;
+      font-size: $font-size-p-max;
     }
   }
 
@@ -135,7 +135,7 @@
     }
 
     & p {
-      font-size: 12px;
+      font-size: $font-size-p-max;
       color: $color-gray-100;
     }
   }
@@ -213,17 +213,17 @@
     &__dashboard-assets-card-body {
       & .top-section {
         & div h6 {
-          font-size: 14px;
+          font-size: $font-size-h6-xs-max;
         }
 
         & div p {
-          font-size: 12px;
+          font-size: $font-size-p-max;
         }
       }
 
       & .bottom-section {
         & p {
-          font-size: 12px;
+          font-size: $font-size-p-max;
         }
       }
     }
@@ -232,16 +232,16 @@
       flex-wrap: wrap;
 
       & .form-select {
-        font-size: 12px;
+        font-size: $font-size-p-max;
       }
 
       &__dashboard-table {
         & thead {
-          font-size: 14px;
+          font-size: $font-size-thead-xs;
         }
 
         & tbody {
-          font-size: 12px;
+          font-size: $font-size-tbody-xs;
         }
       }
 
@@ -255,7 +255,7 @@
     }
 
     h4 {
-      font-size: 16px;
+      font-size: $font-size-h4-xs-min;
     }
 
     &__dashboard-assets-invite-img {
@@ -268,10 +268,14 @@
       }
     }
 
+    .table-responsive::-webkit-scrollbar {
+      height: 6px;
+    }
+
     &__dashboard-assets-invite-terms {
       flex-direction: column;
       & p {
-        font-size: 10px;
+        font-size: $font-size-p-xs;
       }
     }
 
@@ -281,18 +285,18 @@
 
     &__dashboard-assets-invite {
       & h5 {
-        font-size: 16px;
+        font-size: $font-size-h5-xs-max;
       }
 
       & h6 {
-        font-size: 14px;
+        font-size: $font-size-h6-xs-max;
       }
     }
 
     &__dashboard-assets-invite-email {
       & ::placeholder,
       button {
-        font-size: 12px;
+        font-size: $font-size-p-max;
       }
     }
   }

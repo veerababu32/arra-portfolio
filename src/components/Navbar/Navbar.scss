@@ -30,7 +30,7 @@
 
   &__navbar-logo-text {
     margin: 0;
-    font-size: 10px;
+    font-size: $font-size-p-xs;
     color: $color-gray-500;
     text-align: center;
     text-decoration: none;
@@ -51,7 +51,7 @@
     border: 1px solid $color-black-300;
     border-radius: 15px;
     color: $color-black;
-    font-size: $a-font-size;
+    font-size: $font-size-a;
     transition: all 0.3s ease-in-out;
     padding: 4px 16px;
     margin-right: 10px;
@@ -86,7 +86,7 @@
     border: 1px solid $color-radium-theme;
     border-radius: 15px;
     color: $color-white;
-    font-size: $a-font-size;
+    font-size: $font-size-a;
     transition: all 0.3s ease-in-out;
     margin-right: 10px;
 
@@ -106,7 +106,7 @@
     @extend %navbar-right-icons;
 
     & svg {
-      font-size: $svg-font-size;
+      font-size: $font-size-svg;
     }
   }
 
@@ -139,7 +139,7 @@
     position: absolute;
     right: 3px;
     top: 4px;
-    font-size: $badge-font-size !important;
+    font-size: $font-size-badge !important;
     font-weight: 300 !important;
     padding: 2px 4px !important;
   }
@@ -283,7 +283,7 @@
       padding-bottom: 5px;
 
       & svg {
-        font-size: $hamburger-icon-font-size;
+        font-size: $font-size-hamburger-icon;
       }
     }
 
@@ -303,20 +303,20 @@
 
     &__navbar-more-tabs {
       & button {
-        font-size: 12px;
+        font-size: $font-size-a-xs;
       }
     }
 
     &__navbar-search-icon {
       & svg {
-        font-size: 14px;
+        font-size: $font-size-svg-xs;
       }
     }
 
     &__navbar-notification-icon,
     &__navbar-user-icon {
       & svg {
-        font-size: 16px;
+        font-size: $font-size-svg-icons-xs;
       }
     }
 
@@ -339,7 +339,7 @@
 
     &__navbar-notification-dropdown {
       min-width: 210px !important;
-      font-size: 12px !important;
+      font-size: $font-size-a-xs !important;
     }
   }
 }
